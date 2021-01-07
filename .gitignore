@@ -1,0 +1,10 @@
+*~
+gh-pages
+private
+*.out
+*.log
+*.aux
+*.bbl
+*.blg
+*.toc
+
