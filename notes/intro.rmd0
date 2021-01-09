@@ -1,0 +1,35 @@
+---
+title: "Introductory material"
+author: "Ben Bolker"
+date: '`r strsplit(as.character(Sys.time())," ")[[1]][1]` <#copyright> BMB  (except textbook material/other images)'
+urlcolor: blue
+bibliography: ../math4mb.bib
+---
+
+# Miscellaneous admin stuff
+
+## Course outline
+
+### welcome/pandemic issues
+
+- **DON'T PANIC** [@adams_hitchhikers_1995]
+- recording
+
+### academic integrity stuff
+
+- collaboration
+   - acknowledgment
+   - managing interactions
+- software/web/acknowledgment etc.
+
+## Introductions
+
+
+## Software
+
+### Communications
+
+- [Avenue 'hub'](https://avenue.cllmcmaster.ca/d2l/home/375748)
+- [Main course page](https://bbolker.github.io/4mb)
+- [Teams]()
+- [Zulip]()
