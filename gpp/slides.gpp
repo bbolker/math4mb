@@ -1,0 +1,13 @@
+<#define FIGHEIGHT|550px>
+<#define SMFIGHEIGHT|250px>
+<#define nohandout|#1>
+<#define noslides| >
+<#define b2cols|<table width=100%>
+<tr><td style="vertical-align:top; width=50%">>
+<#define s2cols|</td><td style="vertical-align:top; width=50%">>
+<#define e2cols|</td></tr></table>>
+<#define stdfig|<img src="#1" alt="#2" style="height:550px;"><br><span class="figcap">#2</span>>
+<#define lgfig|<img src="#1" alt="#2" style="height:1200px;"><br><span class="figcap">#2</span>>
+<#define smallfig|<img src="#1"/ alt="#2" style="height:250px;" /><br><span class="figcap">#2</span>>
+<#define outspec|,fig.align="center",out.height="550px">
+<#define pause|>

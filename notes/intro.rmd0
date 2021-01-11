@@ -6,30 +6,60 @@ urlcolor: blue
 bibliography: ../math4mb.bib
 ---
 
-# Miscellaneous admin stuff
-
-## Course outline
-
-### welcome/pandemic issues
+# welcome/pandemic issues
 
 - **DON'T PANIC** [@adams_hitchhikers_1995]
 - recording
+- ask questions! make (constructive) suggestions!
 
-### academic integrity stuff
+# Course contents/philosophy
+
+* introduction to **doing** math biology, i.e. research
+* reading, deriving, analyzing (data), computing, some philosophy
+* "God is in every leaf of every tree" (Andrew Gelman)
+
+# Course outline
+
+## academic integrity stuff
 
 - collaboration
-   - acknowledgment
    - managing interactions
-- software/web/acknowledgment etc.
+   - acknowledgment
+- software: code from web, libraries etc.
+   - why?
+        - code reuse is good
+		- can do more/more interesting things if you don't waste time writing trivial code
+		- reusing code is like real life
+		- a little advice on learning programming from the web ([here](https://knightlab.northwestern.edu/2014/03/13/googling-for-code-solutions-can-be-tricky-heres-how-to-get-started/))
+		     - googling the error message is OK!
+			 - learn how to ask: vocabulary, *minimal reproducible examples* etc.
+   - why not?
+		- some code from the web is terrible
+	    - you might learn less, not understand what you're copying ...
+   - ** MUST acknowledge** (and use within licenses)
+   - [academic code integrity examples from MIT](https://integrity.mit.edu/handbook/writing-code)
 
-## Introductions
+# Introductions
 
+- who are you, what do you want to be called?
+- one aspect of biology/math that interests you
+- one random piece of information about yourself
 
-## Software
+# Tech/nuts and bolts
 
-### Communications
+## Communications
 
 - [Avenue 'hub'](https://avenue.cllmcmaster.ca/d2l/home/375748)
 - [Main course page](https://bbolker.github.io/4mb)
 - [Teams]()
 - [Zulip]()
+
+## Code tools
+
+- R **or** Python
+- cloud tools: [syzygy](https://syzygy.mcmaster.ca) or [RStudio cloud]()
+- LaTeX
+  
+
+
+

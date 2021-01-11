@@ -1,0 +1,23 @@
+<#ifdef SLIDES> 
+    <#include "gpp/slides.gpp"> 
+<#endif> 
+<#ifdef BEAMER> 
+    <#include "gpp/beamer.gpp"> 
+<#endif> 
+<#ifdef BEAMERHANDOUT> 
+    <#include "gpp/beamer_handouts.gpp"> 
+<#endif> 
+<#ifdef TUFTE> 
+    <#include "gpp/tufte.gpp"> 
+<#endif> 
+<#ifdef DOCX>
+    <#include "gpp/docx.gpp"> 
+<#endif>
+<#ifdef PPTX>
+    <#include "gpp/pptx.gpp"> 
+<#endif> 
+
+<#ifdef HANDOUT> 
+     <#include "gpp/handout.gpp"> 
+<#endif>
+/-- end hdr --/

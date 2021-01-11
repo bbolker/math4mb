@@ -1,0 +1,27 @@
+<#define gloss|\\textbf{\\textcolor{darkgreen}{#1}}>
+<#define FIGHEIGHT|550px>
+<#define SMFIGHEIGHT|250px>
+<#define nohandout|>
+<#ifndef FINAL>
+ 	<#define finalhandout|>
+<#else>
+ 	<#define finalhandout|#1>	
+<#endif>
+<#define noslides|#1>
+<#define b2cols|\\colbeg>
+<#define s2cols|\\colswitch>
+<#define e2cols|\\colend>
+<#define stdfig|\\begin{center}\\includegraphics[width=0.9\\textwidth]{#1}\\end{center}>
+<#define stdhtfig|\\includegraphics[height=0.5\\textheight]{#1}>
+<#define fullhtfig|\\begin{center}\\includegraphics[height=\\textheight]{#1}\\end{center}>
+<#define medhtfig|\\begin{center}\\includegraphics[height=0.8\\textheight]{#1}\\end{center}>
+<#define lgfig|\\includegraphics{#1}>
+<#define smallfig|\\begin{center}\\includegraphics[width=0.5\\textwidth]{#1}\\end{center}>
+<#define tinyfig|\\includegraphics[width=0.25\\textwidth]{#1}>
+<#define outspec|>
+<#define copyright|\\textcopyright>
+<#define startbib|\\tiny>
+<#define easteregg|\\href{#1}{\\includegraphics[width=10px]{bmbpix/easter-653987_640.png}}>
+<#define pause|>
+<#define comment|>
+<#define tiny|\\mbox{\\tiny #1}>

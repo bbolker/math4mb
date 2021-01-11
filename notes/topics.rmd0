@@ -1,0 +1,29 @@
+---
+title: "topics and techniques"
+---
+
+## mathematical
+
+- understanding attractors: point, limit cycle, chaos (+ quasiperiodicity)
+- identifying and characterizing equilibria
+    - local asymptotic properties via linearization
+	    - (2D) trace/determinant, Routh-Hurwitz criteria
+  	    - Lyapunov exponents
+- (global properties: Lyapunov		
+- representing phase spaces
+    - nullclines, gradient plots
+- bifurcations  and bifurcation diagrams
+- plots of parameter spaces: bifurcation, sensitivity of equilibria etc.
+- nondimensionalization
+- non-autonomous systems/forcing
+
+## philosophical
+
+- what are models for?
+- how to build models, deciding what to include/exclude
+- model criticism
+
+## less likely
+
+- transfer functions
+-

@@ -1,0 +1,28 @@
+<#define FIGHEIGHT|550px>
+<#define SMFIGHEIGHT|250px>
+<#define nohandout|>
+<#ifndef FINAL>
+ 	<#define finalhandout|>
+<#else>
+ 	<#define finalhandout|#1>	
+<#endif>
+<#define noslides|#1>
+<#define b2cols|>
+<#define s2cols|>
+<#define e2cols|>
+<#define stdfig|![ ](#1)>
+<#define stdhtfig|![ ](#1)>
+<#define fullhtfig|![ ](#1)>
+<#define medhtfig|![ ](#1)>
+<#define lgfig|![ ](#1)>
+<#define smallfig|![ ](#1)>
+<#define outspec|>
+<#define copyright|\\textcopyright>
+<#define startbib|\\tiny>
+<#define pause|>
+<#define tinyfig|![ ](#1){width=50px}>
+<#define easteregg|[<#tinyfig bmbpix/easter-653987_640.png>](#1)>
+<#define comment| >
+<#define tiny|#1>
+<#define gloss|**#1**>
+

@@ -1,0 +1,26 @@
+<#define gloss|\\textbf{\\textcolor{darkgreen}{#1}}>
+<#define FIGHEIGHT|550px>
+<#define SMFIGHEIGHT|250px>
+<#define nohandout|#1>
+<#define finalhandout|#1>
+<#define noslides| >
+<#define b2cols|\\colbeg>
+<#define s2cols|\\colswitch>
+<#define e2cols|\\colend>
+<#define stdfig|\\begin{center}\\includegraphics[width=0.9\\textwidth]{#1}\\end{center}>
+<#define stdhtfig|\\begin{center}\\includegraphics[height=0.5\\textheight]{#1}\\end{center}>
+<#define fullhtfig|\\begin{center}\\includegraphics[height=\\textheight]{#1}\\end{center}>
+<#define medhtfig|\\begin{center}\\includegraphics[height=0.8\\textheight]{#1}\\end{center}>
+<#define lgfig|\\includegraphics{#1}>
+<#define smallfig|\\begin{center}\\includegraphics[width=0.5\\textwidth]{#1}\\end{center}>
+<#define tinyfig|\\includegraphics[width=0.25\\textwidth]{#1}>
+<#define outspec|>
+<#define copyright|\\textcopyright>
+<#define startbib|\\tiny>
+<#define small|{\\small #1}>
+<#define tiny|\\mbox{\\tiny #1}>
+<#define pause|\\pause>
+<#define vis1|\\onslide <1-> {#1}>
+<#define vis2|\\onslide<2->{#1}>
+<#define comment|\\textcolor{blue}{#1}>
+<#define easteregg|\\href{#1}{\\includegraphics[width=10px]{bmbpix/easter-653987_640.png}}>
