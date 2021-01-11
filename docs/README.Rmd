@@ -24,9 +24,9 @@ output: "md_document"
 
 ## schedule
 
-```{r echo=FALSE,message=FALSE,results="asis"}
+```{r echo=FALSE,message=FALSE,results="asis",warning=FALSE}
 library(tidyverse)
-
+options(knitr.kable.na="")
 
 mklinks <- function(x, dir="notes", prefix="",extension="pdf") {
     ## x <- "intro;epi1"
@@ -35,7 +35,7 @@ mklinks <- function(x, dir="notes", prefix="",extension="pdf") {
     sapply(strsplit(as.character(x),";"),
            function(y) {
                if (all(is.na(y))) return(NA)
-               paste(sprintf("[../%s/%s%s.%s](%s)",dir,prefix,y,extension,y),
+               paste(sprintf("[%s](../%s/%s%s.%s)",dir,prefix,y,extension,y),
                      collapse=";")
            })
 }

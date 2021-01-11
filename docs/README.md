@@ -30,26 +30,7 @@ admin
 schedule
 --------
 
-    ## Warning: 12 parsing failures.
-    ## row col  expected    actual                    file
-    ##   2  -- 7 columns 5 columns '../admin/schedule.csv'
-    ##   3  -- 7 columns 5 columns '../admin/schedule.csv'
-    ##   4  -- 7 columns 3 columns '../admin/schedule.csv'
-    ##   5  -- 7 columns 3 columns '../admin/schedule.csv'
-    ##   7  -- 7 columns 5 columns '../admin/schedule.csv'
-    ## ... ... ......... ......... .......................
-    ## See problems(...) for more details.
-
 <table>
-<colgroup>
-<col style="width: 3%" />
-<col style="width: 8%" />
-<col style="width: 17%" />
-<col style="width: 33%" />
-<col style="width: 23%" />
-<col style="width: 5%" />
-<col style="width: 8%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">week</th>
@@ -66,7 +47,7 @@ schedule
 <td style="text-align: left;">01</td>
 <td style="text-align: left;">11-15 Jan</td>
 <td style="text-align: left;">intro + epidemic modeling 1</td>
-<td style="text-align: left;"><a href="intro">../notes/intro.pdf</a>;<a href="epi1">../notes/epi1.pdf</a></td>
+<td style="text-align: left;"><a href="..//intropdf.intro">notes</a>;<a href="..//epi1pdf.epi1">notes</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
@@ -76,7 +57,7 @@ schedule
 <td style="text-align: left;">18-22 Jan</td>
 <td style="text-align: left;">epidemic modeling 2</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;"><a href="0">../assignments/assignment_0.html</a></td>
+<td style="text-align: left;"><a href="../assignment_/0html.0">assignments</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
@@ -85,7 +66,7 @@ schedule
 <td style="text-align: left;">25-29 Jan</td>
 <td style="text-align: left;">epidemic modeling 3</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;"><a href="1">../assignments/assignment_1.html</a></td>
+<td style="text-align: left;"><a href="../assignment_/1html.1">assignments</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
@@ -121,7 +102,7 @@ schedule
 <td style="text-align: left;">22-26 Feb</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;"><a href="2">../assignments/assignment_2.html</a></td>
+<td style="text-align: left;"><a href="../assignment_/2html.2">assignments</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
@@ -139,7 +120,7 @@ schedule
 <td style="text-align: left;">08-12 Mar</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;"><a href="3">../assignments/assignment_3.html</a></td>
+<td style="text-align: left;"><a href="../assignment_/3html.3">assignments</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
@@ -157,7 +138,7 @@ schedule
 <td style="text-align: left;">22-26 Mar</td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
-<td style="text-align: left;"><a href="4">../assignments/assignment_4.html</a></td>
+<td style="text-align: left;"><a href="../assignment_/4html.4">assignments</a></td>
 <td style="text-align: left;">NA</td>
 <td style="text-align: left;">NA</td>
 </tr>
