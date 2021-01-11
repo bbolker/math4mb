@@ -1,4 +1,5 @@
 #' Render Table of Contents
+#' From https://gist.github.com/gadenbuie/c83e078bf8c81b035e32c3fc0cf04ee8
 #' 
 #' A simple function to extract headers from an RMarkdown or Markdown document
 #' and build a table of contents. Returns a markdown list with links to the 

@@ -1,6 +1,7 @@
 ---
 title: "course material for Math 4MB/6MB (mathematical biology) @ McMaster University"
 output: "md_document"
+bibliography: ../math4mb.bib
 ---
 
 **UNDER CONSTRUCTION** 11 Jan 2021

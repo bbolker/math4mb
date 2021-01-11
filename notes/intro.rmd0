@@ -11,6 +11,7 @@ bibliography: ../math4mb.bib
 - **DON'T PANIC** [@adams_hitchhikers_1995]
 - recording
 - ask questions! make (constructive) suggestions!
+- too fast? too slow? let me know ...
 
 # Course contents/philosophy
 
@@ -36,7 +37,7 @@ bibliography: ../math4mb.bib
    - why not?
 		- some code from the web is terrible
 	    - you might learn less, not understand what you're copying ...
-   - ** MUST acknowledge** (and use within licenses)
+   - **MUST acknowledge** (and use within licenses)
    - [academic code integrity examples from MIT](https://integrity.mit.edu/handbook/writing-code)
 
 # Introductions
@@ -59,7 +60,8 @@ bibliography: ../math4mb.bib
 - R **or** Python
 - cloud tools: [syzygy](https://syzygy.mcmaster.ca) or [RStudio cloud]()
 - LaTeX
-  
+
+## References
 
 
 
