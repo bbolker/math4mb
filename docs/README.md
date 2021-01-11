@@ -20,12 +20,12 @@ handouts
 software
 --------
 
--   [software installation notes](admin/software.html)
+-   [software installation notes](./admin/software.html)
 
 admin
 -----
 
--   [course outline](admin/4mbinfo.pdf)
+-   [course outline](./admin/4mbinfo.pdf)
 
 schedule
 --------
@@ -47,7 +47,7 @@ schedule
 <td style="text-align: left;">01</td>
 <td style="text-align: left;">11-15 Jan</td>
 <td style="text-align: left;">intro + epidemic modeling 1</td>
-<td style="text-align: left;"><a href="../notes/intro.pdf">intro</a>;<a href="../notes/epi1.pdf">epi1</a></td>
+<td style="text-align: left;"><a href="notes/intro.pdf">intro</a>;<a href="notes/epi1.pdf">epi1</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -57,7 +57,7 @@ schedule
 <td style="text-align: left;">18-22 Jan</td>
 <td style="text-align: left;">epidemic modeling 2</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="../assignments/assignment_0.html">0</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_0.html">0</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -66,7 +66,7 @@ schedule
 <td style="text-align: left;">25-29 Jan</td>
 <td style="text-align: left;">epidemic modeling 3</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="../assignments/assignment_1.html">1</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_1.html">1</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -102,7 +102,7 @@ schedule
 <td style="text-align: left;">22-26 Feb</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="../assignments/assignment_2.html">2</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_2.html">2</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -120,7 +120,7 @@ schedule
 <td style="text-align: left;">08-12 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="../assignments/assignment_3.html">3</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_3.html">3</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -138,7 +138,7 @@ schedule
 <td style="text-align: left;">22-26 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="../assignments/assignment_4.html">4</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_4.html">4</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
