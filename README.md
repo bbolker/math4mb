@@ -13,6 +13,8 @@
 
 ## software
 
+- [software installation notes](admin/software.html)
+
 ## admin
 
 * [course outline](admin/4mbinfo.pdf)
