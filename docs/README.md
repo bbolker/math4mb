@@ -48,7 +48,7 @@ schedule
 <td style="text-align: left;">01</td>
 <td style="text-align: left;">11-15 Jan</td>
 <td style="text-align: left;">intro + epidemic modeling 1</td>
-<td style="text-align: left;"><a href="notes/intro.pdf">intro</a>;<a href="notes/epi1.pdf">epi1</a></td>
+<td style="text-align: left;"><a href="notes/intro.pdf">intro</a>;<a href="notes/epi1.pdf">epi1</a>;<a href="notes/levins.pdf">levins</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98">1</a></td>
