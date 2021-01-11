@@ -28,22 +28,27 @@ bibliography: ../math4mb.bib
 ```{r echo=FALSE,message=FALSE,results="asis",warning=FALSE}
 library(tidyverse)
 options(knitr.kable.NA="")
-
-mklinks <- function(x, dir="notes", prefix="",extension="pdf") {
+mklinks <- function(x, dir="notes", prefix="",extension="pdf",video=FALSE) {
     ## x <- "intro;epi1"
     ## dir <- "notes"
     ## prefix <- ""
     sapply(strsplit(as.character(x),";"),
            function(y) {
                if (all(is.na(y))) return(NA)
-               paste(sprintf("[%s](%s/%s%s.%s)",y,dir,prefix,y,extension),
-                     collapse=";")
+               if (!video) {
+                   paste(sprintf("[%s](%s/%s%s.%s)",y,dir,prefix,y,extension),
+                         collapse=";")
+               } else {
+                   paste(sprintf("[%d](%s)",seq_along(y),y),
+                         collapse=";")
+               }
            })
 }
 
 dd <- (read_csv("../admin/schedule.csv")
     %>% mutate_at("assignments",~mklinks(., "assignments","assignment_","html"))
     %>% mutate_at("handouts", ~mklinks(.))
+    %>% mutate_at("recordings", ~mklinks(.,video=TRUE))
 )
 knitr::kable(dd)
 ```

@@ -39,6 +39,7 @@ schedule
 <th style="text-align: left;">handouts</th>
 <th style="text-align: left;">assignments</th>
 <th style="text-align: left;">readings</th>
+<th style="text-align: left;">recordings</th>
 <th style="text-align: left;">notes</th>
 </tr>
 </thead>
@@ -50,6 +51,7 @@ schedule
 <td style="text-align: left;"><a href="notes/intro.pdf">intro</a>;<a href="notes/epi1.pdf">epi1</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98">1</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
@@ -58,6 +60,7 @@ schedule
 <td style="text-align: left;">epidemic modeling 2</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="assignments/assignment_0.html">0</a></td>
+<td style="text-align: left;"><span class="citation" data-cites="levins_strategy_1966">Levins (1966)</span> + DQs</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -69,11 +72,13 @@ schedule
 <td style="text-align: left;"><a href="assignments/assignment_1.html">1</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">04</td>
 <td style="text-align: left;">1-5 Feb</td>
 <td style="text-align: left;">neuronal models</td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -84,6 +89,7 @@ schedule
 <td style="text-align: left;">8-12 Feb</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="assignments/assignment_2.html">2</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -95,6 +101,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;">midterm break</td>
 </tr>
 <tr class="odd">
@@ -102,7 +109,8 @@ schedule
 <td style="text-align: left;">22-26 Feb</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_2.html">2</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_3.html">3</a></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -114,19 +122,22 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">09</td>
 <td style="text-align: left;">08-12 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_3.html">3</a></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">midterm test (take-home)</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">15-19 Mar</td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -141,10 +152,12 @@ schedule
 <td style="text-align: left;"><a href="assignments/assignment_4.html">4</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">12</td>
 <td style="text-align: left;">29 Mar-2 Apr</td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -159,6 +172,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">14</td>
@@ -168,6 +182,11 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
+
+Levins, R. 1966. “The Strategy of Model Building in Population Biology.”
+*American Scientist* 54: 421–31.
+<https://www.jstor.org/stable/27836590>.

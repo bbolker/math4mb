@@ -1,13 +1,13 @@
-week,date,topics,handouts,assignments,readings,notes
-01,11-15 Jan,intro + epidemic modeling 1,intro;epi1,,,
+week,date,topics,handouts,assignments,readings,recordings,notes
+01,11-15 Jan,intro + epidemic modeling 1,intro;epi1,,,https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98,
 02,18-22 Jan,epidemic modeling 2, ,0,@levins_strategy_1966 + DQs
 03,25-29 Jan,epidemic modeling 3, ,1
 04,1-5 Feb,neuronal models
 05,8-12 Feb, , ,2
-06,15-19 Feb,,,,,midterm break
+06,15-19 Feb,,,,,,midterm break
 07,22-26 Feb, , ,3
 08,01-05 Mar
-09,08-12 Mar, , ,midterm test (take-home)
+09,08-12 Mar, , ,,midterm test (take-home)
 10,15-19 Mar
 11,22-26 Mar, , ,4
 12,29 Mar-2 Apr

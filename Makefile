@@ -23,7 +23,7 @@ GPPHEAD = gpp/macros.gpp
 	Rscript -e "knitr::knit(\"$(notdir $*.rmd)\")"
 
 %.toc.html:  %.md gpp/slides.gpp
-	. ./mktoc.sh $(notdir $*.md) $*.toc.html
+	. ./mktoc.sh $(*.md) $(*.toc.html)
 
 %.slides.pdf: %.rmd0 gpp/beamer.gpp $(BIBFILE) my.beamer
 	gpp --include $(GPPHEAD) -H -DBEAMER=1 $*.rmd0 | sed '1,/-- end hdr --/d' > $*.rmd
