@@ -8,7 +8,9 @@ Sources += Makefile .gitignore README.md LICENSE.md
 
 BIBFILE = math4mb.bib
 GPPHEAD = gpp/macros.gpp
-
+## like HTML-mode but don't use any quote char (esp, not \)
+## BUT escape # in this specification with \ !
+GPPMODE = -U "<\#" ">" "\B" "|" ">" "<" ">" "\#" ""
 ## %.rmd: %.rmd0 slides.gpp
 ## 	gpp --include $(GPPHEAD) -H -DSLIDES=1 $*.rmd0 | sed '1,/-- end hdr --/d' > $*.rmd
 
@@ -16,7 +18,11 @@ GPPHEAD = gpp/macros.gpp
 
 
 %.pdf: %.md
-	pandoc -s --csl reflist2.csl -A bibend.tex -t latex --template gpp/my.tufte --bibliography $(BIBFILE) $(notdir $*.md) -o $(notdir $*.pdf)
+	pandoc -s --csl reflist2.csl -A bibend.tex --from markdown+autolink_bare_uris+tex_math_single_backslash --to latex --template gpp/my.tufte --bibliography $(BIBFILE) $(notdir $*.md) -o $(notdir $*.pdf)
+
+%.pdf: %.rmd0 gpp/tufte.gpp gpp/my.tufte
+	gpp --include $(GPPHEAD) $(GPPMODE) -DTUFTE=1 $< | sed '1,/-- end hdr --/d' > $(notdir $*.rmd)
+	Rscript -e "rmarkdown::render(\"$(notdir $*.rmd)\")"
 
 %.md: %.rmd0 gpp/tufte.gpp gpp/my.tufte
 	gpp --include $(GPPHEAD) -H -DTUFTE=1 $< | sed '1,/-- end hdr --/d' > $(notdir $*.rmd)

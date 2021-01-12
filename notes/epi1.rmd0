@@ -3,7 +3,8 @@ title: "Epidemic models 1"
 author: "Ben Bolker"
 date: '`r strsplit(as.character(Sys.time())," ")[[1]][1]` <#copyright> BMB  (except textbook material/other images)'
 urlcolor: blue
-bibliography: ../math4mb.bib
+bibliography: math4mb.bib
+output: tufte_handout
 ---
 
 ```{r setup,include=FALSE}
@@ -25,20 +26,13 @@ ggsave("pix/phila_flu.pdf")
 print(gg1)
 ```
 
-some questions
-
-# exponential growth
-
-* one variable (=1D model)
-* how does disease spread? $\\to$ equation
-
 ## what do we want to figure out?
 
 ## what shall we assume?
 
 * classify individuals as $S$, $I$ (**compartmental** model; **microparasite** or **intensity-independent**)
 * disease is transmitted from $S$ to $I$
-* $S \\to I$ instantaneously (zero latent period, no $E$)
+* $S \to I$ instantaneously (zero latent period, no $E$)
 * population is **homogeneous** (no heterogeneity in susceptibility, infectiousness, contact)
 * fixed population size (birth = migration = 'natural' death = 0)
 * transmission rate is time-invariant
@@ -55,6 +49,12 @@ start simple!
 * applicability/estimation?
 
 @levins_strategy_1966 (also @orzack_critical_1993, @levins_response_1993, @weisberg_forty_2007)
+
+# exponential growth
+
+* one variable (=1D model)
+* how does disease spread? $\to$ equation
+
 
 ---
 
@@ -87,22 +87,22 @@ model components:
 
 - $I(t)$ (state variable: prevalence)
 - $I(0)$ (initial conditions)
-- $\\beta$ (parameter) = avg contacts **per susceptible per infective per unit time**
+- $\beta$ (parameter) = avg contacts **per susceptible per infective per unit time**
 
 $$
-I(t+\\Delta t) \\approx I(t) + \\beta I(t) \\Delta t
+I(t+\Delta t) \approx I(t) + \beta I(t) \Delta t
 $$
 
-Take $\\lim \\Delta t \\to 0$ (and solve):
+Take $\lim \Delta t \to 0$ (and solve):
 
 $$
-\\frac{dI}{dt} = \\beta I \\to  I(t) = I(0) exp(\\beta t)
+\frac{dI}{dt} = \beta I \to  I(t) = I(0) exp(\beta t)
 $$
 
 ## model criticism
 
 * Ignored discrete nature of individuals
-* Ignored time-varying $\\beta$ (e.g. **diurnal** fluctuations)
+* Ignored time-varying $\beta$ (e.g. **diurnal** fluctuations)
 * Ignored finite infectious periods (recovery/death)
 
 ---
@@ -110,20 +110,20 @@ $$
 **Next**: What if we make infectious periods finite? (i.e., including recovery (**clearance**) or death
 
 $$
-dI/dt = \\beta I - \\gamma I
+dI/dt = \beta I - \gamma I
 $$
 
 ## mean infectious period
 
 $$
-\\begin{split}
-I(t) & = I(0) \\exp(-\\gamma t) \\\\
-\\textrm{proportion uninfected} & = \\exp(-\\gamma t) \\\\
-\\textrm{proportion infected} & = 1- \\exp(-\\gamma t) (= \\textrm{CDF} := C(t)) \\\\
-\\textrm{PDF}: &  = C'(t) = \\gamma \\exp(-\\gamma t) \\\\
-\\textrm{substitute} ~ x & = \\gamma t, d\\,x = \\gamma \\, dt \\\\
-\\textrm{mean} & = E[t] = \\int t \\exp(-\\gamma t) \\, dt = \\int x \\exp(-x)  \\, dx/\\gamma = 1/\\gamma
-\\end{split}
+\begin{split}
+I(t) & = I(0) \exp(-\gamma t) \\
+\textrm{proportion uninfected} & = \exp(-\gamma t) \\
+\textrm{proportion infected} & = 1- \exp(-\gamma t) (= \textrm{CDF} := C(t)) \\
+\textrm{PDF}: &  = C'(t) = \gamma \exp(-\gamma t) \\
+\textrm{substitute} ~ x & = \gamma t \quad \to \quad dx = \gamma \, dt \\
+\textrm{mean} & = E[t] = \int t \exp(-\gamma t) \, dt = \int x \exp(-x)  \, dx/\gamma = 1/\gamma
+\end{split}
 $$
  
 ## dimensional analysis
@@ -131,13 +131,13 @@ $$
 rates and characteristic times/scales
 
 - is $I$ a proportion or a density or a number ... ?
-- what are the units of $\\beta$$, $$\gamma$ ?
+- what are the units of $\beta$$, $$\gamma$ ?
 
 ## nondimensionalization
 
 - standardize any values that can be eliminated **without loss of (mathematical) generality**
 - what can we do here?
-- $\gamma=$1
-- $I$ ? (depends on how we have defined it initially) $\\to$ 
+- $\gamma=1$
+- $I$ ? (depends on how we have defined it initially) $\to I/N$
 
 ## references

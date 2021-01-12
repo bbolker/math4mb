@@ -27,7 +27,22 @@ bibliography: ../math4mb.bib
 
 ```{r echo=FALSE,message=FALSE,results="asis",warning=FALSE}
 library(tidyverse)
+library(stringr)
 options(knitr.kable.NA="")
+## mkreadings <- function(x) {
+##     ## x <- "@Bolker_(2008)_sec_1.3@Bolker_2008_sec1.3.pdf@"
+##     x2 <- stringr::str_extract_all(x,"@[[:alnum:]()_.]+@[[:alnum:]()_.]+@")
+##     sapply(x2,
+##            function(x) {
+##                if (is.na(x)) return(NA)
+##                x3 <- stringr::str_extract_all(x,"@[^@]+")[[1]]
+##                if (length(x3)!=2) stop("bad ref")
+##                x4 <- str_remove(x3,"@")
+##                sprintf("[%s](readings/%s)",
+##                        str_replace(x4[1],"_"," "),
+##                        x4[2])
+##            })
+## }
 mklinks <- function(x, dir="notes", prefix="",extension="pdf",video=FALSE) {
     ## x <- "intro;epi1"
     ## dir <- "notes"

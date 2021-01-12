@@ -3,8 +3,8 @@
 <#define nohandout|>
 <#define comment|>
 <#define pause|>
-<#define tinyfig|\\includegraphics[width=0.25\\textwidth]{#1}>
-<#define tiny|\\mbox{\\tiny #1}>
+<#define tinyfig|\includegraphics[width=0.25\textwidth]{#1}>
+<#define tiny|\mbox{\tiny #1}>
 <#ifndef FINAL>
  	<#define finalhandout|>
 <#else>
@@ -14,14 +14,14 @@
 <#define b2cols|>
 <#define s2cols|>
 <#define e2cols|>
-<#define stdfig|\\includegraphics[height=3in]{#1}>
-<#define stdhtfig|\\includegraphics[height=0.8\\textheight]{#1}>
-<#define lgfig|\\includegraphics{#1}>
-<#define medhtfig|\\begin{center}\\includegraphics[height=3in]{#1}\\end{center}>
-<#define smallfig|\\includegraphics[width=0.5\\textwidth]{#1}>
-<#define fullhtfig|\\begin{center}\\includegraphics[height=0.5\\textheight]{#1}\\end{center}>
+<#define stdfig|\includegraphics[height=3in]{#1}>
+<#define stdhtfig|\includegraphics[height=0.8\textheight]{#1}>
+<#define lgfig|\includegraphics{#1}>
+<#define medhtfig|\begin{center}\includegraphics[height=3in]{#1}\end{center}>
+<#define smallfig|\includegraphics[width=0.5\textwidth]{#1}>
+<#define fullhtfig|\begin{center}\includegraphics[height=0.5\textheight]{#1}\end{center}>
 <#define outspec|>
-<#define copyright|\\textcopyright>
+<#define copyright|\textcopyright>
 <#define startbib|>
-<#define easteregg|\\href{#1}{\\includegraphics[width=5px]{bmbpix/easter-653987_640.png}}>
-<#define gloss|\\textbf{\\textcolor{darkgreen}{#1}}>
+<#define easteregg|\href{#1}{\includegraphics[width=5px]{bmbpix/easter-653987_640.png}}>
+<#define gloss|\textbf{\textcolor{darkgreen}{#1}}>

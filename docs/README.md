@@ -30,7 +30,17 @@ admin
 schedule
 --------
 
-<table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 1%" />
+<col style="width: 3%" />
+<col style="width: 8%" />
+<col style="width: 22%" />
+<col style="width: 10%" />
+<col style="width: 25%" />
+<col style="width: 23%" />
+<col style="width: 4%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">week</th>
@@ -60,7 +70,7 @@ schedule
 <td style="text-align: left;">epidemic modeling 2</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="assignments/assignment_0.html">0</a></td>
-<td style="text-align: left;"><span class="citation" data-cites="levins_strategy_1966">Levins (1966)</span> + DQs</td>
+<td style="text-align: left;"><span class="citation" data-cites="levins_strategy_1966">Levins (1966)</span>; <a href="readings/Bolker_2008_sec1.3.pdf">Bolker (2008) sec 1.3</a> + DQs</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
