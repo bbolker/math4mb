@@ -14,5 +14,5 @@ One of the practical principles you will learn in this course is **reproducibili
 ---
 
 1. State the definition of the Pythagorean theorem, using proper LaTeX for the mathematical symbols.
-2. Write code that reads the file "test.csv" into a data frame; assume that the file is in the current working directory.
-3. Write code that numerically integrates the differential equation $dx/dt = rx-bt$ with outputs for $t=\{0, 0.1, \dots 10\}$, using the values `r=1`, `b=0.5`, `x(0)=0.1`. **Assign the numeric values to the variable symbols and use the symbols in your gradient function**: do **not** write your gradient function as `1*x - 0.5*t`. State what numerical integration method your code is using (e.g. "Euler", "Runge-Kutta", "LSODA").SW
+2. Write code that reads the file `"pim_us_phila_city_1918_dy.csv"`, which you can download [here](../data/pim_us_phila_city_1918_dy.csv) into a data frame (in Python, `pandas.read_csv()`; in R, `read.csv()` or `dplyr::read_csv()`); assume that the file is in the current working directory.
+3. Write code that numerically integrates the differential equation $dx/dt = rx-bt$ with outputs for $t=\{0, 0.1, \dots 10\}$, using the values `r=1`, `b=0.5`, `x(0)=0.1`. **Assign the numeric values to the variable symbols and use the symbols in your gradient function**: do **not** write your gradient function as `1*x - 0.5*t`. State what numerical integration method your code is using (e.g. "Euler", "Runge-Kutta", "LSODA").
