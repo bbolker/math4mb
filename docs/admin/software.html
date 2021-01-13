@@ -11,7 +11,7 @@
 
 <meta name="author" content="Ben Bolker, Kenneth Moyle, David Earn" />
 
-<meta name="date" content="2021-01-10" />
+<meta name="date" content="2021-01-12" />
 
 <title>Software for Math 4MB</title>
 
@@ -388,7 +388,7 @@ summary {
 
 <h1 class="title toc-ignore">Software for Math 4MB</h1>
 <h4 class="author">Ben Bolker, Kenneth Moyle, David Earn</h4>
-<h4 class="date">10 Jan 2021</h4>
+<h4 class="date">12 Jan 2021</h4>
 
 </div>
 
@@ -396,13 +396,14 @@ summary {
 <ul>
 <li><a href="#software-used-for-this-course-quick-start">Software used for this course (quick start)</a></li>
 <li><a href="#r">R</a></li>
+<li><a href="#python">Python</a></li>
 <li><a href="#latex">LaTeX</a></li>
 <li><a href="#installation-configuration-notes-for-latex">Installation &amp; Configuration Notes for LaTeX</a>
 <ul>
 <li><a href="#windows">Windows</a></li>
 <li><a href="#os-x">OS X</a></li>
 </ul></li>
-<li><a href="#spell-checkers-and-word-counters-that-understand-latex">Spell-checkers and word counters that understand LaTeX</a></li>
+<li><a href="#spell-checkers-and-word-counters">Spell-checkers and word counters</a></li>
 <li><a href="#xppaut-numerical-analysis-of-dynamical-systems">XPPAUT (numerical analysis of dynamical systems)</a>
 <ul>
 <li><a href="#installation-configuration-notes">Installation &amp; Configuration Notes</a></li>
@@ -422,7 +423,7 @@ summary {
 <ul>
 <li>install and run on your own computer
 <ul>
-<li>R (and the RStudio IDE) (downloads: <a href="https://cloud.r-project.org/">R</a>, <a href="https://rstudio.com/products/rstudio/download/">RStudio desktop</a> <strong>or</strong></li>
+<li>R (and the RStudio IDE) (downloads: <a href="https://cloud.r-project.org/">R</a>, <a href="https://rstudio.com/products/rstudio/download/">RStudio desktop</a>) <strong>or</strong></li>
 <li>Python and Jupyter notebooks (recommended distribution: <a href="https://www.anaconda.com/products/individual">Anaconda</a>)</li>
 </ul></li>
 </ul></li>
@@ -443,6 +444,13 @@ summary {
 <li><a href="https://www.rstudio.com/products/rstudio/">RStudio</a> is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.</li>
 </ul>
 </div>
+<div id="python" class="section level2">
+<h2>Python</h2>
+<ul>
+<li>Python is another open-source programming language</li>
+<li>Jupyter notebooks are a “notebook interface” that facilitates interactive use of Python (or R!)</li>
+</ul>
+</div>
 <div id="latex" class="section level2">
 <h2>LaTeX</h2>
 <p>The standard system for mathematical typesetting. You must use it for your assignments, final project and presentations.</p>
@@ -454,7 +462,7 @@ summary {
 <h3>Windows</h3>
 <ul>
 <li>the installation can easily take 30 to 60 minutes</li>
-<li>just download and run the ’‘’install-tl.exe’’’ file</li>
+<li>just download and run the <code>install-tl.exe</code> file</li>
 </ul>
 </div>
 <div id="os-x" class="section level3">
@@ -464,10 +472,24 @@ summary {
 </ul>
 </div>
 </div>
-<div id="spell-checkers-and-word-counters-that-understand-latex" class="section level2">
-<h2>Spell-checkers and word counters that understand LaTeX</h2>
-<p>There are a number of <a href="http://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks#Spell-checking_and_Word_Counting">spell-checkers that understand LaTeX</a>, for example: * ispell * aspell * hunspell All of these run on Macs via the Terminal.</p>
-<p>The unix wc command can be used to count words in a plain text file. To use it, you first need to remove the TeX macros from your file. You can then pipe the output into wc. For example, from the terminal window on a Mac you can type</p>
+<div id="spell-checkers-and-word-counters" class="section level2">
+<h2>Spell-checkers and word counters</h2>
+<ul>
+<li>RStudio has built-in LaTeX-aware word counters (<code>Edit &gt; Word count</code>) and spell-checkers (ABC-check icon or via Edit menu)</li>
+<li>Jupyter notebooks: if you execute these commands in a code cell of a notebook:</li>
+</ul>
+<pre><code>!pip install --user jupyter_contrib_nbextensions &gt;/dev/null
+!~/.local/bin/jupyter-contrib-nbextension install --user 2&gt;/dev/null
+!jupyter nbextension enable spellchecker/main</code></pre>
+<p>it will enable a (fairly crude) spell-checker extension for your notebooks</p>
+<p>There are a number of <a href="http://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks#Spell-checking_and_Word_Counting">spell-checkers that understand LaTeX</a>, for example:</p>
+<ul>
+<li>ispell</li>
+<li>aspell</li>
+<li>hunspell</li>
+</ul>
+<p>All of these run on Macs via the Terminal.</p>
+<p>The unix <code>wc</code> command can be used to count words in a plain text file. To use it, you first need to remove the TeX macros from your file. You can then pipe the output into wc. For example, from the terminal window on a Mac you can type</p>
 <pre><code>detex filename | wc</code></pre>
 <p>where you need to insert the <em>filename</em> of the file in question.</p>
 <p>If you have a Mac, the <code>texcount</code> command is much more helpful than the above. The command line syntax is</p>
@@ -480,7 +502,7 @@ summary {
 <p>Some online resources:</p>
 <ul>
 <li><a href="http://www.math.pitt.edu/~bard/xpp/xpp.html">XPPAUT home page</a> (where you can download the source code and/or pre-compiled executables)</li>
-<li>Bard Ermentrout’s <a href="https://www.amazon.ca/exec/obidos/ASIN/0898715067/">book on XPPAUT</a>: <cite>Emf02</cite></li>
+<li>Bard Ermentrout’s <a href="https://www.amazon.ca/exec/obidos/ASIN/0898715067/">book on XPPAUT</a></li>
 <li>Bard Ermentrout’s <a href="http://www.scholarpedia.org/article/XPPAUT">XPPAUT scholarpedia page</a></li>
 <li><a href="http://www.math.pitt.edu/~bard/xpp/help/xpphelp.html">XPP online help</a></li>
 </ul>

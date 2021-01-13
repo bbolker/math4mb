@@ -131,7 +131,7 @@ $$
 rates and characteristic times/scales
 
 - is $I$ a proportion or a density or a number ... ?
-- what are the units of $\beta$$, $$\gamma$ ?
+- what are the units of $\beta$, $\gamma$ ?
 
 ## nondimensionalization
 
@@ -139,5 +139,39 @@ rates and characteristic times/scales
 - what can we do here?
 - $\gamma=1$
 - $I$ ? (depends on how we have defined it initially) $\to I/N$
+
+# Simple (SI) epidemic
+
+- what are we missing?
+- **depletion of susceptibles**
+- let's take a step back and ignore death & recovery for now
+
+---
+
+$$
+\begin{split}
+dS/dt & = -\beta S I \\
+dI/dt & = \beta S I
+\end{split}
+$$
+
+This looks 2D **but** what if we assume $S+I=N$ is constant? Then $S=N-I$
+
+$$
+dI/dt = \beta (N-I) I
+$$
+
+How do we solve this? Partial fractions
+
+$$
+\begin{split}
+\frac{dI}{(N-I)I} & = \beta \, dt \\
+dI (A/(N-I) + B/I) & = dI (IA + B(N-I))/(I(N-I)) \\
+A=B; & B=1/N \\
+(1/N) (-\log(N-I) + \log(I)) \Biggr|_0^t & = t-t_0
+\end{split}
+$$
+
+(Comparison to metapop, logistic growth model)
 
 ## references

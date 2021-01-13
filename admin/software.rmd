@@ -46,15 +46,28 @@ There are several distributions of TeX but [TeXLive](https://www.tug.org/texlive
 ### OS X
 * [https://www.tug.org/mactex/ MacTeX] is a bundle of TeXLive plus TeXShop (a very good editor) and a number of tools.
 
-## Spell-checkers and word counters that understand LaTeX
+## Spell-checkers and word counters
+
+- RStudio has built-in LaTeX-aware word counters (`Edit > Word count`) and spell-checkers (ABC-check icon or via Edit menu)
+- Jupyter notebooks: if you execute these commands in a code cell of a notebook:
+
+```
+!pip install --user jupyter_contrib_nbextensions >/dev/null
+!~/.local/bin/jupyter-contrib-nbextension install --user 2>/dev/null
+!jupyter nbextension enable spellchecker/main
+```
+
+it will enable a (fairly crude) spell-checker extension for your notebooks
 
 There are a number of [spell-checkers that understand LaTeX](http://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks#Spell-checking_and_Word_Counting), for example:
+
 * ispell
 * aspell
 * hunspell
+
 All of these run on Macs via the Terminal.
 
-The unix wc command can be used to count words in a plain text file.  To use it, you first need to remove the TeX macros from your file.  You can then pipe the output into wc.  For example, from the terminal window on a Mac you can type
+The unix `wc` command can be used to count words in a plain text file.  To use it, you first need to remove the TeX macros from your file.  You can then pipe the output into wc.  For example, from the terminal window on a Mac you can type
 ```
 detex filename | wc
 ```

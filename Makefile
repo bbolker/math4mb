@@ -11,6 +11,7 @@ GPPHEAD = gpp/macros.gpp
 ## like HTML-mode but don't use any quote char (esp, not \)
 ## BUT escape # in this specification with \ !
 GPPMODE = -U "<\#" ">" "\B" "|" ">" "<" ">" "\#" ""
+
 ## %.rmd: %.rmd0 slides.gpp
 ## 	gpp --include $(GPPHEAD) -H -DSLIDES=1 $*.rmd0 | sed '1,/-- end hdr --/d' > $*.rmd
 
@@ -19,18 +20,28 @@ GPPMODE = -U "<\#" ">" "\B" "|" ">" "<" ">" "\#" ""
 
 %.pdf: %.md
 	pandoc -s --csl reflist2.csl -A bibend.tex --from markdown+autolink_bare_uris+tex_math_single_backslash --to latex --template gpp/my.tufte --bibliography $(BIBFILE) $(notdir $*.md) -o $(notdir $*.pdf)
+	mv $@ docs/$@
 
 %.pdf: %.rmd0 gpp/tufte.gpp gpp/my.tufte
 	gpp --include $(GPPHEAD) $(GPPMODE) -DTUFTE=1 $< | sed '1,/-- end hdr --/d' > $(notdir $*.rmd)
 	Rscript -e "rmarkdown::render(\"$(notdir $*.rmd)\")"
+	mv $(notdir $@) docs/$@
 
 %.md: %.rmd0 gpp/tufte.gpp gpp/my.tufte
 	gpp --include $(GPPHEAD) -H -DTUFTE=1 $< | sed '1,/-- end hdr --/d' > $(notdir $*.rmd)
 	Rscript -e "knitr::knit(\"$(notdir $*.rmd)\")"
 
+FOO=
 %.toc.html:  %.md gpp/slides.gpp
-	. ./mktoc.sh $(*.md) $(*.toc.html)
+##	eval . ./mktoc.sh $(notdir $*.md) $*.toc.html
+	eval . ./mktoc.sh hello goodbye
 
+%.html: %.rmd $(BIBFILE)
+	Rscript -e "rmarkdown::render(\"$<\")"
+	mv $@ docs/$@
+
+###
+## everything below here old/untested?
 %.slides.pdf: %.rmd0 gpp/beamer.gpp $(BIBFILE) my.beamer
 	gpp --include $(GPPHEAD) -H -DBEAMER=1 $*.rmd0 | sed '1,/-- end hdr --/d' > $*.rmd
 	Rscript -e "library(\"knitr\"); knit(\"$*.rmd\")"  
@@ -51,7 +62,7 @@ GPPMODE = -U "<\#" ">" "\B" "|" ">" "<" ">" "\#" ""
 	Rscript -e "library(knitr); knit(\"$*.rmd\")"
 
 %.html: %.rmd0 $(BIBFILE)
-	gpp --include $(GPPHEAD) -H -DDOCX=1 -DFINAL=1 $*.rmd0 | sed '1,/-- end hdr --/d' > $*.rmd
+	gpp --include $(GPPHEAD) $(GPPMODE) -DDOCX=1 -DFINAL=1 $*.rmd0 | sed '1,/-- end hdr --/d' > $*.rmd
 	Rscript -e "rmarkdown::render(\"$*.rmd\")"
 	rm $*.rmd
 
