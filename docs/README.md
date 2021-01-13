@@ -30,16 +30,16 @@ admin
 schedule
 --------
 
-<table style="width:100%;">
+<table>
 <colgroup>
 <col style="width: 1%" />
 <col style="width: 3%" />
+<col style="width: 7%" />
+<col style="width: 18%" />
 <col style="width: 8%" />
-<col style="width: 22%" />
-<col style="width: 10%" />
-<col style="width: 25%" />
-<col style="width: 23%" />
-<col style="width: 4%" />
+<col style="width: 21%" />
+<col style="width: 35%" />
+<col style="width: 3%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -61,7 +61,7 @@ schedule
 <td style="text-align: left;"><a href="notes/intro.pdf">intro</a>;<a href="notes/epi1.pdf">epi1</a>;<a href="notes/levins.pdf">levins</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98">1</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98">11 Jan recording</a>, <a href="blackboard/bb_13jan.pdf">13 Jan blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
@@ -196,6 +196,9 @@ schedule
 </tr>
 </tbody>
 </table>
+
+References
+----------
 
 Levins, R. 1966. “The Strategy of Model Building in Population Biology.”
 *American Scientist* 54: 421–31.

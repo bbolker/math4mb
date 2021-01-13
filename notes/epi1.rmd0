@@ -7,6 +7,8 @@ bibliography: math4mb.bib
 output: tufte_handout
 ---
 
+\hypersetup{colorlinks}
+
 ```{r setup,include=FALSE}
 library(ggplot2); theme_set(theme_bw())
 library(tidyverse)
@@ -160,14 +162,15 @@ ggsave(gg1+scale_y_log10(),file="pix/phila_flu_log.pdf")
 * slope is $\beta N$
 * "intercept" is $\log(I(0))$ (zero is defined in a tricky way)
 
-```{r,philalog_lm,echo=FALSE,message=FALSE}
-print(gg1+scale_y_log10()+
+```{r,philalog_lm,echo=FALSE,message=FALSE,fig.cap="log-scale flu with regression"}
+gg_param_est <- gg1+scale_y_log10()+
       geom_smooth(method="lm",
                   colour="red",
                   data=filter(dd,
                               date>=as.Date("1918/09/15"),
-                              date<=as.Date("1918/10/05"))))
-                              
+                              date<=as.Date("1918/10/05")))
+print(gg_param_est)
+ggsave("pix/phila_flu_reg.pdf")
 ```
 
 ## model assessment
@@ -221,8 +224,33 @@ I(t) & = \frac{QN}{1+Q} = \frac{N}{1 + \frac{1}{Q}} \\
 \end{split}
 $$
 
+?? $\equiv I(0) \exp(\beta N t) / (1 + (I0/N)(\exp(\beta N t) - 1))$ ??
+
+## Qualitative analysis
+
+* $I \ll N$ ? exponential growth
+* **per capita growth rate** ($(dI/dt)/I = d(\log(I))/dt$) decreases monotonically with increasing $I$
+* asymptotic behaviour? equilibria? periodic orbits?
+* periodic orbits impossible in 1D (uniqueness of flows)
+
+## equilibrium analysis
+
+* $I=0$, **disease free equilibrium** (DFE)
+* $I=N$, **endemic equilibrium** (EE)
+
+Stability? (Assume $\beta>0$)
+
+- **local asymptotic stability**
+- **global asymptotic stability** (Lyapunov functions)
+
+## model criticism/conclusions
+
+---
+
 (Comparison to metapop, logistic growth model)
 
 ---
+
+
 
 ## references

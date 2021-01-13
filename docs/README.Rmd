@@ -43,19 +43,20 @@ options(knitr.kable.NA="")
 ##                        x4[2])
 ##            })
 ## }
-mklinks <- function(x, dir="notes", prefix="",extension="pdf",video=FALSE) {
+mklinks <- function(x, dir="notes", prefix="",extension="pdf",raw=FALSE) {
     ## x <- "intro;epi1"
     ## dir <- "notes"
     ## prefix <- ""
     sapply(strsplit(as.character(x),";"),
            function(y) {
                if (all(is.na(y))) return(NA)
-               if (!video) {
+               if (!raw) {
                    paste(sprintf("[%s](%s/%s%s.%s)",y,dir,prefix,y,extension),
                          collapse=";")
                } else {
-                   paste(sprintf("[%d](%s)",seq_along(y),y),
-                         collapse=";")
+                   ## paste(sprintf("[%d](%s)",seq_along(y),y),
+                   ## collapse=";")
+                   y
                }
            })
 }
@@ -63,7 +64,7 @@ mklinks <- function(x, dir="notes", prefix="",extension="pdf",video=FALSE) {
 dd <- (read_csv("../admin/schedule.csv")
     %>% mutate_at("assignments",~mklinks(., "assignments","assignment_","html"))
     %>% mutate_at("handouts", ~mklinks(.))
-    %>% mutate_at("recordings", ~mklinks(.,video=TRUE))
+    %>% mutate_at("recordings", ~mklinks(.,raw=TRUE))
 )
 knitr::kable(dd)
 ```
