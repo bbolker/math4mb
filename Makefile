@@ -33,8 +33,7 @@ GPPMODE = -U "<\#" ">" "\B" "|" ">" "<" ">" "\#" ""
 
 FOO=
 %.toc.html:  %.md gpp/slides.gpp
-##	eval . ./mktoc.sh $(notdir $*.md) $*.toc.html
-	eval . ./mktoc.sh hello goodbye
+	./mktoc.sh $(notdir $*.md) $*.toc.html
 
 %.html: %.rmd $(BIBFILE)
 	Rscript -e "rmarkdown::render(\"$<\")"

@@ -165,10 +165,20 @@ How do we solve this? Partial fractions
 
 $$
 \begin{split}
-\frac{dI}{(N-I)I} & = \beta \, dt \\
-dI (A/(N-I) + B/I) & = dI (IA + B(N-I))/(I(N-I)) \\
-A=B; & B=1/N \\
-(1/N) (-\log(N-I) + \log(I)) \Biggr|_0^t & = t-t_0
+\frac{dI}{\beta (N-I)I} & = dt \\
+dI \left(\frac{A}{N-I} + \frac{B}{I}\right) & = dI \cdot \frac{A + B(N-I)}{I(N-I)} \\
+A=B; & \quad B=1/N \\
+\frac{1}{\beta N} (-\log(N-I) + \log(I)) \Biggr|_{I(0)}^{I} & = t-t_0 \\
+(-\log(N-I) + \log(I)) \Biggr|_{I(0)}^{I} & = (\beta N) (t-t_0)  \quad (\textrm{set } t_0=0) \\
+\log\left(\frac{I}{N-I}\right) - \log\left(\frac{I(0)}{N-I(0)}\right)
+& = \beta N t \\
+\log\left(\frac{I}{N-I}\right) 
+& = \beta N t + - \log\left(\frac{I(0)}{N-I(0)}\right) \\
+\frac{I}{N-I} & = \exp(\beta N t) \frac{I(0)}{N-I(0)} = Q \\
+I & = Q(N-I) \\
+I(t)(1+Q) & = QN \\
+I(t) & = \frac{QN}{1+Q} = \frac{N}{1 + \frac{1}{Q}} \\
+& \frac{N}{1 + \left( \frac{N-I(0)}{I(0)} \right) \exp(-\beta N t) }
 \end{split}
 $$
 
