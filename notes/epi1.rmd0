@@ -16,7 +16,7 @@ library(tidyverse)
 
 - P & I data from Philadelphia 1918 flu:
 
-```{r,philadata,echo=FALSE,message=FALSE}
+```{r,philadata,echo=FALSE,message=FALSE,fig.cap="Phila. 1918 flu data"}
 dd <- (read_csv("data/pim_us_phila_city_1918_dy.csv")
     %>% mutate_at("date", ~lubridate::ymd(.))
 )
@@ -140,6 +140,45 @@ rates and characteristic times/scales
 - $\gamma=1$
 - $I$ ? (depends on how we have defined it initially) $\to I/N$
 
+## compare with data???
+
+Original scale:
+
+![Philadelphia P&I](pix/phila_flu.pdf)
+
+Log scale:
+
+```{r,philalog,echo=FALSE,message=FALSE}
+ggsave(gg1+scale_y_log10(),file="pix/phila_flu_log.pdf")
+```
+
+![Philadelphia P&I, log scale](pix/phila_flu_log.pdf)
+
+---
+
+* Fit a straight line through the straight part of the curve
+* slope is $\beta N$
+* "intercept" is $\log(I(0))$ (zero is defined in a tricky way)
+
+```{r,philalog_lm,echo=FALSE,message=FALSE}
+print(gg1+scale_y_log10()+
+      geom_smooth(method="lm",
+                  colour="red",
+                  data=filter(dd,
+                              date>=as.Date("1918/09/15"),
+                              date<=as.Date("1918/10/05"))))
+                              
+```
+
+## model assessment
+
+* math is super-easy!
+* clear, testable predictions
+* parameter estimation is easy
+* only consistent over a short time window
+    * small $t$: arbitrarily close to zero
+	* large $t$: ridiculous
+
 # Simple (SI) epidemic
 
 - what are we missing?
@@ -161,7 +200,7 @@ $$
 dI/dt = \beta (N-I) I
 $$
 
-How do we solve this? Partial fractions
+How do we solve this? **Partial fractions**
 
 $$
 \begin{split}
@@ -174,14 +213,16 @@ A=B; & \quad B=1/N \\
 & = \beta N t \\
 \log\left(\frac{I}{N-I}\right) 
 & = \beta N t + - \log\left(\frac{I(0)}{N-I(0)}\right) \\
-\frac{I}{N-I} & = \exp(\beta N t) \frac{I(0)}{N-I(0)} = Q \\
+\frac{I}{N-I} & = \exp(\beta N t) \frac{I(0)}{N-I(0)} \equiv Q \\
 I & = Q(N-I) \\
 I(t)(1+Q) & = QN \\
 I(t) & = \frac{QN}{1+Q} = \frac{N}{1 + \frac{1}{Q}} \\
-& \frac{N}{1 + \left( \frac{N-I(0)}{I(0)} \right) \exp(-\beta N t) }
+& = \frac{N}{1 + \left( \frac{N-I(0)}{I(0)} \right) \exp(-\beta N t) }
 \end{split}
 $$
 
 (Comparison to metapop, logistic growth model)
+
+---
 
 ## references

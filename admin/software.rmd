@@ -31,9 +31,15 @@ output:
 - Python is another open-source programming language
 - Jupyter notebooks are a "notebook interface" that facilitates interactive use of Python (or R!)
 
+## Markdown
+
+Markdown is a general-purpose **lightweight markup language**; it is the basis of the **Rmarkdown** format, and is also used in text chunks in a Jupyter notebook.
+
 ## LaTeX
 
-The standard system for mathematical typesetting.  You must use it for your assignments, final project and presentations.   
+The standard system for mathematical typesetting.  You must use it for your assignments, final project and presentations.
+
+You can look at the source code of the notes on GitHub, e.g. [here](https://github.com/bbolker/math4mb/blob/master/notes/epi1.rmd0). [detexify](https://detexify.kirelabs.org/classify.html) is useful if you're trying to figure out how to reference a symbol in LaTeX.
 
 There are several distributions of TeX but [TeXLive](https://www.tug.org/texlive/) has the advantage of having both Windows and OS X versions and including good TeX/LaTeX editors (TeX is a typesetting program and does not itself include an editor).
 
