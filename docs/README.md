@@ -32,14 +32,14 @@ schedule
 
 <table>
 <colgroup>
-<col style="width: 1%" />
-<col style="width: 3%" />
-<col style="width: 7%" />
-<col style="width: 18%" />
-<col style="width: 8%" />
-<col style="width: 21%" />
-<col style="width: 35%" />
-<col style="width: 3%" />
+<col style="width: 0%" />
+<col style="width: 2%" />
+<col style="width: 4%" />
+<col style="width: 12%" />
+<col style="width: 5%" />
+<col style="width: 14%" />
+<col style="width: 56%" />
+<col style="width: 2%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -61,7 +61,7 @@ schedule
 <td style="text-align: left;"><a href="notes/intro.pdf">intro</a>;<a href="notes/epi1.pdf">epi1</a>;<a href="notes/levins.pdf">levins</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98">11 Jan recording</a>, <a href="blackboard/bb_13jan.pdf">13 Jan blackboard</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98">11 Jan recording</a> , <a href="blackboard/bb_13jan.pdf">13 Jan blackboard</a> , <a href="https://web.microsoftstream.com/video/a4e1c484-499b-41fd-8599-39bcde8ed3f2">14 Jan recording</a>, <a href="blackboard/bb_13jan.pdf">14 Jan blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
