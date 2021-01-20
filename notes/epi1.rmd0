@@ -404,10 +404,10 @@ Another way to see that $\beta-\gamma$ is the slope on the log scale.
 
 Local asymptotic stability **or**
 
-* $\frac{dI}{dt} & = \beta SI - \gamma I$
+* $\frac{dI}{dt}  = \beta SI - \gamma I$
 * non-dimensionalize: $\gamma=1$, $\beta=\rzero$
-* $\frac{dI}{dt} & = (\rzero S - 1) I$
-* $\frac{d\log I}{dt} & = \rzero S - 1$
+* $\frac{dI}{dt}  = (\rzero S - 1) I$
+* $\frac{d\log I}{dt}  = \rzero S - 1$
 
 Since $S \le 1$, $\rzero <1 \to$ deriv of $\log I$ is always negative
 (don't really need the last step)

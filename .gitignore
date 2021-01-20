@@ -12,4 +12,5 @@ private
 figure/
 .Rhistory
 \.~lock*
+.ipynb_checkpoints
 

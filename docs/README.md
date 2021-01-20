@@ -81,7 +81,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="assignments/assignment_1.pdf">1</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/a3303573-04d0-46f6-b483-bfd90e93acae">20 Jan recording</a>, <a href="blackboard/bb_20jan.pdf">20 Jan blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
