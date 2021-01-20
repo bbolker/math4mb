@@ -71,7 +71,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="assignments/assignment_0.pdf">0</a></td>
 <td style="text-align: left;"><span class="citation" data-cites="levins_strategy_1966">Levins (1966)</span>; <a href="readings/Bolker_2008_sec1.3.pdf">Bolker (2008) sec 1.3</a> + DQs</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/a3303573-04d0-46f6-b483-bfd90e93acae">20 Jan recording</a>, <a href="blackboard/bb_20jan.pdf">20 Jan blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
@@ -81,7 +81,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="assignments/assignment_1.pdf">1</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/a3303573-04d0-46f6-b483-bfd90e93acae">20 Jan recording</a>, <a href="blackboard/bb_20jan.pdf">20 Jan blackboard</a></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
