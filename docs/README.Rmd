@@ -62,7 +62,7 @@ mklinks <- function(x, dir="notes", prefix="",extension="pdf",raw=FALSE) {
 }
 
 dd <- (read_csv("../admin/schedule.csv")
-    %>% mutate_at("assignments",~mklinks(., "assignments","assignment_","html"))
+    %>% mutate_at("assignments",~mklinks(., "assignments","assignment_","pdf"))
     %>% mutate_at("handouts", ~mklinks(.))
     %>% mutate_at("recordings", ~mklinks(.,raw=TRUE))
 )

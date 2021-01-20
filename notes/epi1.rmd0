@@ -5,14 +5,25 @@ date: '`r strsplit(as.character(Sys.time())," ")[[1]][1]` <#copyright> BMB  (exc
 urlcolor: blue
 bibliography: math4mb.bib
 output: tufte_handout
+header-includes:
+  - \hypersetup{colorlinks=true}
 ---
-
-\hypersetup{colorlinks}
 
 ```{r setup,include=FALSE}
 library(ggplot2); theme_set(theme_bw())
 library(tidyverse)
 ```
+
+```{r opts,include=FALSE}
+library("knitr")
+knitr::opts_chunk$set(eval=TRUE)
+library("reticulate")
+use_python("/usr/bin/python3")
+matplotlib <- import("matplotlib")
+matplotlib$use("Agg", force = TRUE)
+```
+
+\newcommand{\rzero}{\mathcal{R}_0}
 
 # motivation
 
@@ -251,6 +262,164 @@ Stability? (Assume $\beta>0$)
 
 ---
 
+# SIR model
 
+## Basic SIR model
+
+* put the pieces together
+
+$$
+\begin{split}
+\frac{dS}{dt} & = - \beta S I \\
+\frac{dI}{dt} & = \beta S I - \gamma I \\
+\frac{dR}{dt} & = \gamma I
+\end{split}
+$$
+
+* really 2D (because $S+I+R=N$)
+* rescale to $N=1$ ($S$, $I$, $R$ as proportions)
+
+Numerical solution:
+
+```{r SIR}
+SIRgrad <- function(t, y, parms) {
+    g <- with(as.list(c(y,parms)), {
+        c(-beta*S*I, beta*S*I-gamma*I, gamma*I)
+    })
+    return(list(g))
+}
+library(deSolve)
+y0 <- c(S=0.99, I=0.01, R=0)
+p0 <- c(beta=4, gamma=1)
+tvec <- seq(0,8,length=101)
+sir_R <- ode(y=y0, times=tvec, parms=p0, func=SIRgrad)
+```
+
+```{r SIRplot,fig.width=6,fig.height=6,out.width="0.5\\textwidth",fig.cap="SIR model (R)"}
+par(las=1,bty="l") ## cosmetic
+matplot(tvec, sir_R[,-1],
+        type="l", lwd=2, ## solid lines, thicker
+        xlab="time",ylab="proportion")
+legend("right",names(y0), col=1:3, lty=1:3, lwd=2)
+```
+
+## Phase plane plot
+
+```{r phaseplane,fig.width=6,fig.height=6,out.width="0.5\\textwidth",fig.cap="SIR phase plane (R)"}
+par(las=1,bty="l") ## cosmetic
+plot(I~S,type="l",data=as.data.frame(sir_R))
+with(as.data.frame(sir_R), points(S,I, cex=0.75,pch=16))
+```
+
+## Solve using Python
+
+```{python SIR2}
+import numpy as np
+import scipy.integrate
+def SIR_grad(x,t,params):
+   """basic gradient definitions for SIR model"""
+   beta,gamma = params   ## unpack parameters
+   S,I,R = x             ## unpack state variables
+   return(np.array([-beta*S*I, beta*S*I-gamma*I, gamma*I]))
+
+t_vec = np.linspace(0,8,101)
+params = (4,1) ## extra parameters (beta=2, gamma=1)
+y0 = (0.99, 0.01, 0)
+SIR_sol1 = scipy.integrate.odeint(SIR_grad,
+                                  y0=y0,
+                                  t=t_vec,
+                                  args=(params,))
+```
+
+```{python SIRplot_python,fig.width=6,fig.height=6,out.width="0.5\\textwidth"}
+## https://community.rstudio.com/t/how-to-display-the-plot-in-the-python-chunk/22039/3
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+ax.plot(SIR_sol1);
+plt.show()
+```
+
+## dimensional analysis
+
+* initial growth rate ($\textrm{time}^{-1}$) $\beta-\gamma$
+* mean infectious period $1/\gamma$ (time)
+* basic reproduction number $\mathcal{R}_0 = \beta/\gamma$
+
+## initial growth rate
+
+$$
+\begin{split}
+\frac{dI}{dt} &  = \beta S - \gamma I \\
+       & = (\beta S - \gamma) I \\
+	   & \approx (\beta - \gamma) I \quad \textrm{ near } DFE
+\end{split}
+$$
+
+or calculate **Jacobian** ($\partial X_i/\partial X_j$):
+
+$$
+\left(
+\begin{array}{ccc}
+-\beta I & -\beta S & 0 \\
+\beta I & \beta S -\gamma & 0 \\
+0 & \gamma & 0 
+\end{array}
+\right)
+$$
+
+Evaluate at DFE ($\{1, 0, 0 \}$):
+
+$$
+\left(
+\begin{array}{ccc}
+0 & -\beta & 0 \\
+0 & \beta - \gamma & 0 \\
+0 & \gamma & 0 
+\end{array}
+\right)
+$$
+
+Eigenvalues of this are pretty boring! But useful approach.
+
+## Per capita rates
+
+In general we can express *per capita* gradients in $X$
+as gradients of $\log(X)$:
+
+$$
+\begin{split}
+\frac{dX}{dt} & = X f(X,Y,Z, \dots) \\
+\frac{\frac{dX}{dt}}{X} & = f(X,Y,Z, \dots) \\
+\frac{d\log(X)}{dt} & =  f(X,Y,Z, \dots)
+\end{split}
+$$
+
+Another way to see that $\beta-\gamma$ is the slope on the log scale.
+
+
+## Stability of DFE
+
+* $\beta>\gamma$ ($r>0$)
+* $\beta/\gamma>1$ ($\mathcal{R}_0>1$)
+
+Local asymptotic stability **or**
+
+* $\frac{dI}{dt} & = \beta SI - \gamma I$
+* non-dimensionalize: $\gamma=1$, $\beta=\rzero$
+* $\frac{dI}{dt} & = (\rzero S - 1) I$
+* $\frac{d\log I}{dt} & = \rzero S - 1$
+
+Since $S \le 1$, $\rzero <1 \to$ deriv of $\log I$ is always negative
+(don't really need the last step)
+
+## Biological well-posedness
+
+
+## Solution
+
+* can't get analytical solution for $S(t)$, $I(t)$
+* **but**: 
+
+## final size
 
 ## references

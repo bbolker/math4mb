@@ -69,7 +69,7 @@ schedule
 <td style="text-align: left;">18-22 Jan</td>
 <td style="text-align: left;">epidemic modeling 2</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_0.html">0</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_0.pdf">0</a></td>
 <td style="text-align: left;"><span class="citation" data-cites="levins_strategy_1966">Levins (1966)</span>; <a href="readings/Bolker_2008_sec1.3.pdf">Bolker (2008) sec 1.3</a> + DQs</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -79,7 +79,7 @@ schedule
 <td style="text-align: left;">25-29 Jan</td>
 <td style="text-align: left;">epidemic modeling 3</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_1.html">1</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_1.pdf">1</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -99,7 +99,7 @@ schedule
 <td style="text-align: left;">8-12 Feb</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_2.html">2</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_2.pdf">2</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -119,7 +119,7 @@ schedule
 <td style="text-align: left;">22-26 Feb</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_3.html">3</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_3.pdf">3</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -159,7 +159,7 @@ schedule
 <td style="text-align: left;">22-26 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_4.html">4</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_4.pdf">4</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
