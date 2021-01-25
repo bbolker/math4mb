@@ -1,0 +1,70 @@
+---
+title: "ODE solution examples"
+---
+
+```{r setup}
+library(deSolve)
+library(reticulate)
+## set up required packages
+while (!py_module_available("scipy")) {
+    py_install("scipy")
+}
+while (!py_module_available("matplotlib")) {
+    py_install("matplotlib")
+}
+```
+
+```{r ode_solve_R}
+grad <- function(t,y,params) {
+  ## The old-fashioned way to unpack the parameters & state variables:
+  ## beta <- params[1]
+  ## gamma <- params[2]
+  ## S <- y[1]
+  ## I <- y[2]
+  ## R <- y[3]
+  g <- with(as.list(c(y,params)), { ## run with variable names
+     c(S=-beta*S*I,
+       I=beta*S*I-gamma*I,
+       R=gamma*I)
+  })
+  return(list(g))
+}
+y0 <- c(S=0.99, I=0.01, R=0)  ## initial conditions
+p0 <- c(beta=3, gamma=1)      ## params
+grad(t=0, y=y0, params=p0)    ## check gradient
+tvec <- seq(0,10,by=0.1)      ## time vector
+result <- ode(y=y0,times=tvec,parms=p0,func=grad)
+```
+
+```{r ode_plot}
+## result[,-1]: all columns *except* the first
+matplot(x=result[,"time"],y=result[,-1],type="l")
+```
+
+```{python ode_solve_py}
+import numpy as np
+from scipy.integrate import odeint
+def SIR_grad(y, t, params):
+   ## unpack tuples; e.g. x, y = (1, 2)
+   beta, gamma = params
+   S, I, R = y
+   return np.array([-beta*S*I, beta*S*I-gamma*I, gamma*I])
+
+y0 = (0.99, 0.01, 0)
+params = (4,1)
+grad(0, y0, params) ## check
+t_vec = np.linspace(0,8,101)
+SIR_sol1 = odeint(SIR_grad,
+                  y0=y0,
+                  t=t_vec,
+                  args=(params,))
+```
+
+```{python SIRplot_python}
+## https://community.rstudio.com/t/how-to-display-the-plot-in-the-python-chunk/22039/3
+import matplotlib
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+ax.plot(SIR_sol1);
+plt.show()
+```

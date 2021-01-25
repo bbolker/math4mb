@@ -35,10 +35,10 @@ schedule
 <col style="width: 0%" />
 <col style="width: 2%" />
 <col style="width: 4%" />
-<col style="width: 12%" />
+<col style="width: 10%" />
 <col style="width: 5%" />
 <col style="width: 14%" />
-<col style="width: 56%" />
+<col style="width: 58%" />
 <col style="width: 2%" />
 </colgroup>
 <thead>
@@ -58,7 +58,7 @@ schedule
 <td style="text-align: left;">01</td>
 <td style="text-align: left;">11-15 Jan</td>
 <td style="text-align: left;">intro + epidemic modeling 1</td>
-<td style="text-align: left;"><a href="notes/intro.pdf">intro</a>;<a href="notes/epi1.pdf">epi1</a>;<a href="notes/levins.pdf">levins</a></td>
+<td style="text-align: left;"><a href="notes/intro.pdf">intro</a>, <a href="notes/epi1.pdf">epi1</a> , levins</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98">11 Jan recording</a> , <a href="blackboard/bb_13jan.pdf">13 Jan blackboard</a> , <a href="https://web.microsoftstream.com/video/a4e1c484-499b-41fd-8599-39bcde8ed3f2">14 Jan recording</a>, <a href="blackboard/bb_13jan.pdf">14 Jan blackboard</a></td>
@@ -78,10 +78,10 @@ schedule
 <td style="text-align: left;">03</td>
 <td style="text-align: left;">25-29 Jan</td>
 <td style="text-align: left;">epidemic modeling 3</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="code/ode_ex1.Rmd">basic ODEs</a></td>
 <td style="text-align: left;"><a href="assignments/assignment_1.pdf">1</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a">25 Jan recording</a>, <a href="blackboard/bb_25jan.pdf">25 Jan blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
