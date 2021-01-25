@@ -279,9 +279,10 @@ $$
 * really 2D (because $S+I+R=N$)
 * rescale to $N=1$ ($S$, $I$, $R$ as proportions)
 
-Numerical solution:
+Numerical solution (R version):
 
 ```{r SIR}
+## define gradient function
 SIRgrad <- function(t, y, parms) {
     g <- with(as.list(c(y,parms)), {
         c(-beta*S*I, beta*S*I-gamma*I, gamma*I)
@@ -289,13 +290,16 @@ SIRgrad <- function(t, y, parms) {
     return(list(g))
 }
 library(deSolve)
+## initial conditions and parameters
 y0 <- c(S=0.99, I=0.01, R=0)
 p0 <- c(beta=4, gamma=1)
 tvec <- seq(0,8,length=101)
+## solve (LSODA by default)
 sir_R <- ode(y=y0, times=tvec, parms=p0, func=SIRgrad)
 ```
 
 ```{r SIRplot,fig.width=6,fig.height=6,out.width="0.5\\textwidth",fig.cap="SIR model (R)"}
+## plot
 par(las=1,bty="l") ## cosmetic
 matplot(tvec, sir_R[,-1],
         type="l", lwd=2, ## solid lines, thicker
@@ -323,7 +327,7 @@ def SIR_grad(x,t,params):
    return(np.array([-beta*S*I, beta*S*I-gamma*I, gamma*I]))
 
 t_vec = np.linspace(0,8,101)
-params = (4,1) ## extra parameters (beta=2, gamma=1)
+params = (4,1) ## extra parameters (beta, gamma)
 y0 = (0.99, 0.01, 0)
 SIR_sol1 = scipy.integrate.odeint(SIR_grad,
                                   y0=y0,
@@ -418,8 +422,34 @@ Since $S \le 1$, $\rzero <1 \to$ deriv of $\log I$ is always negative
 ## Solution
 
 * can't get analytical solution for $S(t)$, $I(t)$
-* **but**: 
+* **but**: we can solve for $I(S)$:
 
-## final size
+$$
+\begin{split}
+\frac{dI}{dS} & = \frac{dI/dt}{dS/dt} = -1 + \frac{1}{\rzero S} \\
+\int_{I(0)}^I(t) \, dI & = \int_{S(0)}^{S(t)} \left( -1 + \frac{1}{\rzero S} \right) \, dS \\
+I-I(0) & = -(S-S(0)) + \frac{1}{\rzero} \log(S/S(0)) \\
+I + S - (I(0)+S(0)) & = \frac{1}{\rzero} \log(S/S(0))
+\end{split}
+$$
+
+## Final size calculations
+
+* $t \to \infty$: 
+$$
+(I_\infty + S_\infty) - (I(0)+S(0)) = \frac{1}{\rzero} \log S_\infty/S(0)
+$$
+* newly invading pathogen: $S \approx 1$, $I(0) \ll 1$ ($\approx 0$), $I_\infty \to 0$
+* in the limit $I(0) \to 0$:
+$$
+S_\infty) - 1 = \frac{1}{\rzero} \log S_\infty
+$$
+* "final size" $Z = 1-S_\infty$
+* $-Z = \frac{1}{\rzero} \log (1-Z)$
+
+## Epidemic threshold
+
+## Comparing Epidemic threshold vs. final size
+
 
 ## references
