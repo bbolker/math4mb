@@ -87,10 +87,10 @@ schedule
 <tr class="even">
 <td style="text-align: left;">04</td>
 <td style="text-align: left;">1-5 Feb</td>
-<td style="text-align: left;">neuronal models</td>
+<td style="text-align: left;">more epidemic modeling</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="citation" data-cites="shaw_what_2021">Shaw and Kennedy (2021)</span></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -203,3 +203,8 @@ References
 Levins, R. 1966. “The Strategy of Model Building in Population Biology.”
 *American Scientist* 54: 421–31.
 <https://www.jstor.org/stable/27836590>.
+
+Shaw, Clara L., and David A. Kennedy. 2021. “What the Reproductive
+Number R0 Can and Cannot Tell Us About COVID-19 Dynamics.” *Theoretical
+Population Biology*, January.
+<https://doi.org/10.1016/j.tpb.2020.12.003>.

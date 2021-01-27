@@ -416,8 +416,42 @@ Local asymptotic stability **or**
 Since $S \le 1$, $\rzero <1 \to$ deriv of $\log I$ is always negative
 (don't really need the last step)
 
-## Biological well-posedness
+## Automated analysis
 
+```{r phaseR, fig.cap="phase plane analysis in R"}
+library(phaseR)
+par(las=1,bty="l",xaxs="i",yaxs="i") ## cosmetic
+SIRgrad_2d <- function(t, y, parms) {
+    g <- with(as.list(c(y,parms)), {
+        c(-beta*S*I, beta*S*I-gamma*I)
+    })
+    return(list(g))
+}
+## plot(0:1,0:1,type="n",xlab="S",ylab="I")
+f1 <- flowField(SIRgrad_2d,
+          xlim=c(0,1),
+          ylim=c(0,1),
+          parameters=p0,
+          state.names=c("S","I"),
+          add=FALSE)
+n1 <- nullclines(SIRgrad,
+                 xlim=c(0,1),
+                 ylim=c(0,1),
+                 parameters=p0,
+                 state.names=c("S","I"))
+trajectory(SIRgrad_2d,parameters=p0,
+           state.names=c("S","I"),
+           ## n=10,
+           y0=y0[1:2],
+           tlim=c(0,5))
+```
+
+```{r eval=FALSE}
+phasePlaneAnalysis(SIRgrad_2d,xlim=c(0,1),
+                   parameters=p0,
+                   state.names=c("S","I"),
+                   ylim=c(0,1))
+```
 
 ## Solution
 
@@ -447,9 +481,51 @@ $$
 * "final size" $Z = 1-S_\infty$
 * $-Z = \frac{1}{\rzero} \log (1-Z)$
 
+## Lambert W functions
+
+* How do we solve this?
+* Newton's method (or whatever)
+* *Lambert $W$* [@corless_lambert_1996]: solves $W \exp(W) = Z$
+
+$$
+Z = 1+\frac{1}{\rzero} W(-\rzero \exp(-\rzero))
+$$
+
 ## Epidemic threshold
 
+Assuming vaccination (or other perfect *prophylaxis* [protection]) at rate $p$
+
+$$
+R_0 = 1 - 1/p
+$$
+
+speed-based intervention:
+
+$$
+\begin{split}
+\beta S I - (\gamma + \phi) I & < 0 \\
+I (\beta - \gamma - \phi) & < 0 \\
+\phi & > (\beta - \gamma) = r
+\end{split}
+$$
+
 ## Comparing Epidemic threshold vs. final size
+
+```{r cmp_thresh,fig.cap="final size vs herd immunity"}
+library(emdbook)
+finalsize <- function(R0) {
+    1+1/R0*lambertW(-R0*exp(-R0))
+}
+par(las=1,bty="l")
+curve(finalsize(x),from=1,to=10,xlab=expression(R[0]),
+      ylab="proportion")
+curve(1-1/x, add=TRUE, col=2)
+legend("bottomright",
+       c("final size","herd immunity threshold"),
+       col=1:2, lty=1)
+```
+## SIR with vital dynamics
+
 
 
 ## references
