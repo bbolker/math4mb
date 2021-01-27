@@ -418,7 +418,7 @@ Since $S \le 1$, $\rzero <1 \to$ deriv of $\log I$ is always negative
 
 ## Automated analysis
 
-```{r phaseR, fig.cap="phase plane analysis in R"}
+```{r phaseR, fig.cap="phase plane analysis in R",fig.width=8,fig.height=8,out.width="\\textwidth"}
 library(phaseR)
 par(las=1,bty="l",xaxs="i",yaxs="i") ## cosmetic
 SIRgrad_2d <- function(t, y, parms) {
@@ -439,7 +439,7 @@ n1 <- nullclines(SIRgrad,
                  ylim=c(0,1),
                  parameters=p0,
                  state.names=c("S","I"))
-trajectory(SIRgrad_2d,parameters=p0,
+t1 <- trajectory(SIRgrad_2d,parameters=p0,
            state.names=c("S","I"),
            ## n=10,
            y0=y0[1:2],
@@ -511,7 +511,7 @@ $$
 
 ## Comparing Epidemic threshold vs. final size
 
-```{r cmp_thresh,fig.cap="final size vs herd immunity"}
+```{r cmp_thresh,fig.cap="final size vs herd immunity",fig.width=7,fig.height=5,out.width="\\textwidth"}
 library(emdbook)
 finalsize <- function(R0) {
     1+1/R0*lambertW(-R0*exp(-R0))
