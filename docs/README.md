@@ -33,13 +33,13 @@ schedule
 <table>
 <colgroup>
 <col style="width: 0%" />
-<col style="width: 2%" />
+<col style="width: 1%" />
 <col style="width: 4%" />
-<col style="width: 10%" />
+<col style="width: 8%" />
 <col style="width: 5%" />
+<col style="width: 13%" />
+<col style="width: 51%" />
 <col style="width: 14%" />
-<col style="width: 58%" />
-<col style="width: 2%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -82,7 +82,7 @@ schedule
 <td style="text-align: left;"><a href="assignments/assignment_1.pdf">1</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a">25 Jan recording</a>, <a href="blackboard/bb_25jan.pdf">25 Jan blackboard</a></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/a2e67217-6b1f-4a81-9b0a-f71f5f9f3815">27 Jan recording</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">04</td>

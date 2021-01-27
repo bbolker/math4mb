@@ -1,7 +1,7 @@
 week,date,topics,handouts,assignments,readings,recordings,notes
 01,11-15 Jan,intro + epidemic modeling 1,[intro](notes/intro.pdf);[epi1](notes/epi1.pdf);levins,,,[11 Jan recording](https://web.microsoftstream.com/video/f1861d40-4279-4356-8f98-eaa016402e98); [13 Jan blackboard](blackboard/bb_13jan.pdf); [14 Jan recording](https://web.microsoftstream.com/video/a4e1c484-499b-41fd-8599-39bcde8ed3f2); [14 Jan blackboard](blackboard/bb_13jan.pdf),
 02,18-22 Jan,epidemic modeling 2, ,0,@levins_strategy_1966; [Bolker (2008) sec 1.3](readings/Bolker_2008_sec1.3.pdf) + DQs,[20 Jan recording](https://web.microsoftstream.com/video/a3303573-04d0-46f6-b483-bfd90e93acae); [20 Jan blackboard](blackboard/bb_20jan.pdf); [21 Jan recording](https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a); [21 Jan blackboard](blackboard/bb_21jan.pdf)
-03,25-29 Jan,epidemic modeling 3,[basic ODEs](code/ode_ex1.Rmd),1,,[25 Jan recording](https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a); [25 Jan blackboard](blackboard/bb_25jan.pdf)
+03,25-29 Jan,epidemic modeling 3,[basic ODEs](code/ode_ex1.Rmd),1,,[25 Jan recording](https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a); [25 Jan blackboard](blackboard/bb_25jan.pdf), [27 Jan recording](https://web.microsoftstream.com/video/a2e67217-6b1f-4a81-9b0a-f71f5f9f3815), [27 Jan blackboard](blackboard/bb_27jan.pdf)
 04,1-5 Feb,more epidemic modeling, , ,@shaw_what_2021
 05,8-12 Feb, , ,2
 06,15-19 Feb,,,,,,midterm break
