@@ -14,13 +14,11 @@ where is everything?
     synchronous classes (Mon/Wed/Thurs 1:30-2:20 PM)
 -   [**Zulip**](https://math4mb.zulipchat.com/#): chat/forum
 
-handouts
---------
-
-software
---------
+resources
+---------
 
 -   [software installation notes](./admin/software.html)
+-   [misc readings](./admin/readings.md)
 
 admin
 -----
