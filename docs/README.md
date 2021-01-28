@@ -18,7 +18,7 @@ resources
 ---------
 
 -   [software installation notes](./admin/software.html)
--   [misc readings](./admin/readings.md)
+-   [misc readings](./admin/readings.html)
 
 admin
 -----
