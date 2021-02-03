@@ -28,16 +28,16 @@ admin
 schedule
 --------
 
-<table>
+<table style="width:100%;">
 <colgroup>
 <col style="width: 0%" />
-<col style="width: 1%" />
+<col style="width: 2%" />
 <col style="width: 4%" />
-<col style="width: 8%" />
+<col style="width: 9%" />
 <col style="width: 5%" />
-<col style="width: 13%" />
-<col style="width: 51%" />
 <col style="width: 14%" />
+<col style="width: 55%" />
+<col style="width: 7%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -79,18 +79,18 @@ schedule
 <td style="text-align: left;"><a href="code/ode_ex1.Rmd">basic ODEs</a></td>
 <td style="text-align: left;"><a href="assignments/assignment_1.pdf">1</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a">25 Jan recording</a>, <a href="blackboard/bb_25jan.pdf">25 Jan blackboard</a></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/a2e67217-6b1f-4a81-9b0a-f71f5f9f3815">27 Jan recording</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a">25 Jan recording</a> , <a href="blackboard/bb_25jan.pdf">25 Jan blackboard</a> , <a href="https://web.microsoftstream.com/video/a2e67217-6b1f-4a81-9b0a-f71f5f9f3815">27 Jan recording</a></td>
+<td style="text-align: left;"><a href="blackboard/bb_27jan.pdf">27 Jan blackboard</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">04</td>
 <td style="text-align: left;">1-5 Feb</td>
 <td style="text-align: left;">more epidemic modeling</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="code/finalsize_3feb.ipynb">final size notebook</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="citation" data-cites="shaw_what_2021">Shaw and Kennedy (2021)</span></td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">3 Feb recording</a>, <a href="blackboard/bb_03feb.pdf">3 Feb blackboard</a></td>
-<td style="text-align: left;"><a href="code/finalsize_3feb.ipynb">final size notebook</a></td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">05</td>
