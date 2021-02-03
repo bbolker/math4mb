@@ -52,7 +52,7 @@ def SIR_grad(y, t, params):
 
 y0 = (0.99, 0.01, 0)
 params = (4,1)
-grad(0, y0, params) ## check
+SIR_grad(y0, 0, params) ## check
 t_vec = np.linspace(0,8,101)
 SIR_sol1 = odeint(SIR_grad,
                   y0=y0,
@@ -67,4 +67,41 @@ import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
 ax.plot(SIR_sol1);
 plt.show()
+```
+
+## phaseR examples
+
+Redefine as 2D:
+
+```{r phaseR1}
+grad2d <- function(t,y,params) {
+  g <- with(as.list(c(y,params)), { ## run with variable names
+     c(S=-beta*S*I,
+       I=beta*S*I-gamma*I)
+  })
+  return(list(g))
+}
+y0 <- c(S=0.99, I=0.01)
+p0 <- c(beta=3, gamma=1)
+sol1 <- ode(y0, times=tvec, func=grad2d, parms=p0)
+plot(sol1[,"S"],sol1[,"I"],type="l",xlim=c(0,1),ylim=c(0,1))
+points(sol1[,"S"], sol1[,"I"])
+points(sol1[1,"S"], sol1[1,"I"], col="red", pch=16)
+points(1,0)
+points(1,0,col="blue",pch=16)
+library(phaseR)
+## nullclines (points where dI/dt=0 OR dS/dt=0)
+## dI/dt=0 when S=0 or I=0 or beta*S=gamma (-> S=gamma/beta)
+n1 <- nullclines(grad2d, parameters=p0, state.names=c("S","I"),
+                 add=TRUE,xlim=c(0,1), ylim=c(0,1))
+f1 <- flowField(grad2d, parameters=p0, state.names=c("S","I"),
+                add=TRUE,xlim=c(0,1), ylim=c(0,1))
+```
+
+Step-by-step/interactive:
+
+```{r phaseR2,eval=FALSE}
+phasePlaneAnalysis(grad2d, 
+                   parameters=p0, state.names=c("S","I"),
+                    xlim=c(0,1), ylim=c(0,1))
 ```

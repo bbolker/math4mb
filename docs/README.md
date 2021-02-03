@@ -89,8 +89,8 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="citation" data-cites="shaw_what_2021">Shaw and Kennedy (2021)</span></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">3 Feb recording</a>, <a href="blackboard/bb_03feb.pdf">3 Feb blackboard</a></td>
+<td style="text-align: left;"><a href="code/finalsize_3feb.ipynb">final size notebook</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">05</td>
