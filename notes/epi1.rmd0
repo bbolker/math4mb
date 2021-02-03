@@ -18,6 +18,14 @@ library(tidyverse)
 library("knitr")
 knitr::opts_chunk$set(eval=TRUE)
 library("reticulate")
+## scikit-learn? py_install("scikit-learn") works but py_module_available("scikit-learn") doesn't ...
+modules <- c("pandas","numpy","sympy")
+for (m in modules) {
+    while (!py_module_available(m)) {
+        cat("installing",m,"\n")
+        py_install(m)
+    }
+}
 use_python("/usr/bin/python3")
 matplotlib <- import("matplotlib")
 matplotlib$use("Agg", force = TRUE)
@@ -182,6 +190,24 @@ gg_param_est <- gg1+scale_y_log10()+
                               date<=as.Date("1918/10/05")))
 print(gg_param_est)
 ggsave("pix/phila_flu_reg.pdf")
+```
+
+```{python linreg}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+dd = pd.read_csv("data/pim_us_phila_city_1918_dy.csv")
+## plt.plot(dd.pim)
+## plt.plot(np.log10(dd.pim))
+t = np.arange(20)
+lw = np.log10(dd.pim)[20:40]
+plt.plot(t,lw,'o')
+## https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lstsq.html
+## https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
+ta = t.reshape(-1,1)  ## make this into a column vector
+reg = LinearRegression().fit(ta,lw)
+plt.plot(t,reg.intercept_+reg.coef_[0]*t)
 ```
 
 ## model assessment
@@ -487,9 +513,22 @@ $$
 * Newton's method (or whatever)
 * *Lambert $W$* [@corless_lambert_1996]: solves $W \exp(W) = Z$
 
-$$
-Z = 1+\frac{1}{\rzero} W(-\rzero \exp(-\rzero))
-$$
+```{python symW}
+import sympy as sym
+z, R = sym.symbols('z R')
+sym.solve(sym.Eq(z,-1/R*sym.log(1-z)),z)
+```
+
+```{r finalsize,fig.width=8,fig.height=8,out.width="\\textwidth"}
+finalsize <- function(R0) {
+    1+1/R0*lambertW(-R0*exp(-R0))
+}
+R0 <- 3
+curve(-1/R0*log(1-x), from=0,to=1)
+curve(1*x, add=TRUE,col="red")
+library(emdbook)
+abline(v=finalsize(R0),lty=2)
+```
 
 ## Epidemic threshold
 
@@ -524,8 +563,21 @@ legend("bottomright",
        c("final size","herd immunity threshold"),
        col=1:2, lty=1)
 ```
+
+## Estimating R from data
+
+- Euler-Lotka equation
+
+$$
+\begin{split}
+I(t) & = \int_0^t I(t-\tau) K(\tau) \, d\tau \\
+I(0) \exp(rt) & = \int_0^t I(0) \exp(r(t-\tau)) K(\tau) \, d\tau \\
+1 = \int_0^t  \exp(-r \tau) K(\tau) \, d\tau \\
+1 = \int_0^t  \exp(-r \tau) \rzero g(\tau) \, d\tau \\
+\frac{1}{\rzero} = \int_0^t  \exp(-r \tau) g(\tau) \, d\tau
+\end{split}
+$$
+
 ## SIR with vital dynamics
-
-
 
 ## references
