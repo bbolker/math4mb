@@ -33,15 +33,15 @@ schedule
 <col style="width: 0%" />
 <col style="width: 2%" />
 <col style="width: 4%" />
-<col style="width: 10%" />
+<col style="width: 14%" />
 <col style="width: 5%" />
 <col style="width: 14%" />
-<col style="width: 58%" />
+<col style="width: 55%" />
 <col style="width: 2%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">week</th>
+<th style="text-align: left;">1week</th>
 <th style="text-align: left;">date</th>
 <th style="text-align: left;">topics</th>
 <th style="text-align: left;">handouts</th>
@@ -86,10 +86,10 @@ schedule
 <td style="text-align: left;">04</td>
 <td style="text-align: left;">1-5 Feb</td>
 <td style="text-align: left;">more epidemic modeling</td>
-<td style="text-align: left;"><a href="code/finalsize_3feb.ipynb">final size notebook</a></td>
+<td style="text-align: left;"><a href="code/finalsize_3feb.ipynb">final size notebook</a>, <a href="code/restimate_4feb.R">estimating r</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="citation" data-cites="shaw_what_2021">Shaw and Kennedy (2021)</span></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">3 Feb recording</a>, <a href="blackboard/bb_03feb.pdf">3 Feb blackboard</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">3 Feb recording</a> , <a href="blackboard/bb_03feb.pdf">3 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">4 Feb recording</a>, <a href="blackboard/bb_04feb.pdf">4 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
