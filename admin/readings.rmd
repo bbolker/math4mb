@@ -3,8 +3,13 @@ title: "misc reading"
 bibliography: ../math4mb.bib
 ---
 
-This is a place for readings (mostly primary/peer-reviewed math, bio, math modeling journals) that are of potential interest but that haven't specifically been listed elsewhere in notes etc. You can also look at the [BibTeX file](https://github.com/bbolker/math4mb/blob/master/math4mb.bib).
+This is a place for readings (mostly primary/peer-reviewed math, bio, math modeling journals) that are of potential interest but that haven't specifically been listed elsewhere in notes etc. You can also look at the [BibTeX file](https://github.com/bbolker/math4mb/blob/master/math4mb.bib). Full bibliography (plus links) is at the bottom of this page ...
 
+- @park_practical_2019: a paper that goes into more detail on the relationship between $r$ and $\mathcal{R}_0$, specifically looking at approximating the generation interval by a Gamma distribution as a practical way to improve $\mathcal{R}_0$ estimation in real-world applications
+- @dushoff_speed_2020: a preprint on "strength-based" interventions (affecting $\beta$, e.g. vaccination) and "speed-based" (affecting $\gamma$, e.g. testing and tracing) in epidemics
+- @corless_lambert_1996: lots of fun details, applications, etc. on the Lambert $W$ function
+- @hurtado_time_2020: a paper on the **generalized** linear chain trick, allowing compartmental models with a wide range of "dwell times" (i.e., distributions of time spent in a compartment)
+- @park_reconciling_2020: exploring ${\mathcal R}_0$ estimates for COVID-19
 - @box_science_1976: a paper (like Levins 1966) that discusses the relationship between applications and statistics. Here's an entertaining/useful quotation:
 
 > Mathematistry is characterized by development of theory for theory's sake, which since it seldom touches down with practice, has a tendency to redefine the problem rather than solve it. Typically, there has once been a statistical problem with scientific relevance but this has long since been lost sight of.
@@ -17,3 +22,5 @@ This is a place for readings (mostly primary/peer-reviewed math, bio, math model
 
 > The first goal of this paper is to present a building block approach to the construction of deterministic epidemiological models. Each model is built from components such as the epidemiological compartment structure, the form of the incidence, the distributions of waiting times in the compartments, the demographic structure, and the epidemiological-demographic interactions. Because there are many choices for each aspect, the combinatorial possibilities are enormous. The title of this article suggests that the number of possible epidemiological models is very large; indeed, I show that there are more possibilities than 1001.<p>
 > The second goal of this paper is to convince modelers and mathematicians that it may be inappropriate to analyze the many different possible models one by one in published papers. Only the analyses of models which break new ground or illustrate the importance of some new aspect are of significant interest. Analyses which consider some slight variation of a previous model and which lead to essentially the same solution behavior may not be worth publishing. If the thresholds and behavior of the new model are predictable based on the insight gained from the analysis of previous models, then the analysis of the new model is probably not an important contribution.
+
+## References
