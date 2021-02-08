@@ -99,7 +99,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="assignments/assignment_2.pdf">2</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">8 Feb recording</a>, <a href="blackboard/bb_08feb.pdf">8 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">

@@ -583,7 +583,7 @@ $$
 * models of **endemic** disease
 * e.g. "childhood diseases" (measles, mumps, rubella, pertussis, polio, chickenpox, ...)
    * directly transmitted, acute, immunizing
-* SIRS model
+* SIRS model: influenza (evolution), coronaviruses/SARS-CoV-2 (maybe???), cholera [@king_inapparent_2008]
 * SIR model *with vital dynamics*
 
 $$
@@ -597,7 +597,8 @@ $$
 
 * Balanced population (birth rate = $\mu N$). Can consider more complex demography but often don't need to
     * disease-induced death rates low relative to natural mortality
-	* demographic time scales much longer than epidemic time scales
+	* demographic time scales much longer than epidemic time scales  
+(exceptions: **chronic** diseases like tuberculosis, HIV/AIDS, diseases of non-human animals an dplants ...)	
 * Scaling $\beta/N$ is much easier for dealing with applications/real data, scaling $N=1$ is easier for doing math
 * $\rzero$ is $\beta/(\mu+\gamma)$ ($\approx \beta/\gamma$ for most human diseases)
 
@@ -632,12 +633,14 @@ $$
 \begin{split}
 \lambda & = (1/2) \left( -\mu \rzero \pm \sqrt{\mu^2\rzero^2 - 4 \mu(\rzero-1)(\mu+\gamma)} \right) \\
 & \approx (1/2) \left( -\mu \rzero \pm \sqrt{-4\mu(\rzero-1)\gamma} \right) \\
-& = (1/2) -\mu \rzero \pm i \sqrt{(1/L) (L/A) (1\gamma)}
+& = -\frac{\mu \rzero}{2} \pm i \sqrt{(1/L) (L/A) (1/\gamma)} \\
+& =  -\frac{\mu \rzero}{2} \pm i 1/\sqrt{(A \tau}
 \end{split}
 $$
+where $\tau$ is the infectious period. Both parts of the eigenvalue have units of time$^{-1}$.
 
-* So the imaginary part is $\sqrt{A \tau}$ where $\tau$ is the length of the infective period.
-* e.g. for measles $A \approx 70 \textrm{yr}$, $\tau \approx 1/26$, epidemic interval is about 2.76 years.
+* the period is $2\pi$ *divided by* the imaginary part = $2 \pi \sqrt{A \tau}$
+* e.g. for measles $A \approx 5 \textrm{yr}$, $\tau \approx 1/26$, epidemic interval is about 2.76 years.
 
 ```{r}
 2*pi*sqrt(5/26)
@@ -652,5 +655,7 @@ $$
    * then ...
 * Gillespie algorithm
 * stochastic ODEs
+
+---
 
 ## References
