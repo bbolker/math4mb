@@ -572,12 +572,85 @@ $$
 \begin{split}
 I(t) & = \int_0^t I(t-\tau) K(\tau) \, d\tau \\
 I(0) \exp(rt) & = \int_0^t I(0) \exp(r(t-\tau)) K(\tau) \, d\tau \\
-1 = \int_0^t  \exp(-r \tau) K(\tau) \, d\tau \\
-1 = \int_0^t  \exp(-r \tau) \rzero g(\tau) \, d\tau \\
-\frac{1}{\rzero} = \int_0^t  \exp(-r \tau) g(\tau) \, d\tau
+1 & = \int_0^t  \exp(-r \tau) K(\tau) \, d\tau \\
+1 & = \int_0^t  \exp(-r \tau) \rzero g(\tau) \, d\tau \\
+\frac{1}{\rzero} & = \int_0^t  \exp(-r \tau) g(\tau) \, d\tau
 \end{split}
 $$
 
-## SIR with vital dynamics
+## SIRS/SIR with vital dynamics
 
-## references
+* models of **endemic** disease
+* e.g. "childhood diseases" (measles, mumps, rubella, pertussis, polio, chickenpox, ...)
+   * directly transmitted, acute, immunizing
+* SIRS model
+* SIR model *with vital dynamics*
+
+$$
+\begin{split}
+\frac{dS}{dt} & = \mu N - \beta/N S I - \mu S \\
+\frac{dI}{dt} & = \beta/N S I - \gamma I - \mu I \\
+\frac{dR}{dt} & = \gamma I - \mu R
+\end{split}
+$$
+
+
+* Balanced population (birth rate = $\mu N$). Can consider more complex demography but often don't need to
+    * disease-induced death rates low relative to natural mortality
+	* demographic time scales much longer than epidemic time scales
+* Scaling $\beta/N$ is much easier for dealing with applications/real data, scaling $N=1$ is easier for doing math
+* $\rzero$ is $\beta/(\mu+\gamma)$ ($\approx \beta/\gamma$ for most human diseases)
+
+Most of the following is taken from @brauer_endemic_2019
+$$
+\begin{split}
+S^* & = \frac{\mu+\gamma}{\beta} = 1/\rzero  \quad \textrm{(this is \textbf{very general})} \\
+I^* & = \frac{\mu}{\mu+\gamma} - \frac{\mu}{\beta} = \frac{\mu}{\beta} (\rzero-1)
+\end{split}
+$$
+
+* at equilibrium the **force of infection** is $\beta I^*$, so the **average age at infection** is $A=1/(\beta I^*)$
+* average lifespan is $L=1/\mu$
+* $L/A = \beta I^*/\mu = \rzero-1$
+    * another way to estimate $\rzero$! (also, $S^* = 1/\rzero$)
+	* tells us something about risk by age, effects of vaccination
+	
+Jacobian at EE:
+
+$$
+\left(
+\begin{array}{cc}
+-\mu\rzero & -(\mu + \gamma) \\
+\mu(\rzero-1) & 0
+\end{array}
+\right)
+$$
+
+Trace = $-\mu \rzero$, Det = $\mu(\mu+\gamma)(\rzero-1)$
+
+$$
+\begin{split}
+\lambda & = (1/2) \left( -\mu \rzero \pm \sqrt{\mu^2\rzero^2 - 4 \mu(\rzero-1)(\mu+\gamma)} \right) \\
+& \approx (1/2) \left( -\mu \rzero \pm \sqrt{-4\mu(\rzero-1)\gamma} \right) \\
+& = (1/2) -\mu \rzero \pm i \sqrt{(1/L) (L/A) (1\gamma)}
+\end{split}
+$$
+
+* So the imaginary part is $\sqrt{A \tau}$ where $\tau$ is the length of the infective period.
+* e.g. for measles $A \approx 70 \textrm{yr}$, $\tau \approx 1/26$, epidemic interval is about 2.76 years.
+
+```{r}
+2*pi*sqrt(5/26)
+```
+* **Damping factor**: amplitude decreases by a factor $\exp(-\mu \rzero T/2)$ per cycle
+
+## Stochasticity
+
+* Reed-Frost model
+   * household infection model: fixed (small) population, discrete infection generations
+   * start with **index cases**
+   * then ...
+* Gillespie algorithm
+* stochastic ODEs
+
+## References
