@@ -633,29 +633,157 @@ $$
 \begin{split}
 \lambda & = (1/2) \left( -\mu \rzero \pm \sqrt{\mu^2\rzero^2 - 4 \mu(\rzero-1)(\mu+\gamma)} \right) \\
 & \approx (1/2) \left( -\mu \rzero \pm \sqrt{-4\mu(\rzero-1)\gamma} \right) \\
-& = -\frac{\mu \rzero}{2} \pm i \sqrt{(1/L) (L/A) (1/\gamma)} \\
-& =  -\frac{\mu \rzero}{2} \pm i 1/\sqrt{(A \tau}
+& = -\frac{\mu \rzero}{2} \pm i \sqrt{(1/L) (L/A) \gamma} \\
+& =  -\frac{\mu \rzero}{2} \pm i \cdot 1/\sqrt{A \tau}
 \end{split}
 $$
-where $\tau$ is the infectious period. Both parts of the eigenvalue have units of time$^{-1}$.
+where $\tau=1/\gamma$ is the infectious period. Both parts of the eigenvalue have units of time$^{-1}$.
 
 * the period is $2\pi$ *divided by* the imaginary part = $2 \pi \sqrt{A \tau}$
-* e.g. for measles $A \approx 5 \textrm{yr}$, $\tau \approx 1/26$, epidemic interval is about 2.76 years.
+* e.g. for measles $A \approx 5 \textrm{yr}$, $\tau \approx 1/26$, epidemic interval is `2*pi*sqrt(5/26)` $\approx$ `r round(2*pi*sqrt(5/26),2)` years.
+* **Damping factor**: amplitude decreases by a factor $\exp(-\mu \rzero T/2)$ per cycle (factor of 1/2 because we are measuring the size of the excursions, not the size of the envelope)
 
-```{r}
-2*pi*sqrt(5/26)
+```{r damping, echo=FALSE, fig.cap="damping",fig.width=7,fig.height=5,out.width="\\textwidth"}
+par(las=1,bty="l")
+f <- function(x) exp(-x/4)*cos(2*pi*x)
+curve(f(x),from=0,to=8,n=501,xlab="time",ylab="")
+abline(h=0,lty=2)
+arrows(1,0.8,2,0.8, code=3, length=0.1, angle=20)
+text(1.5,0.8,"period",pos=3)
+segments(3,f(3),4,f(3),lty=2)
+segments(3,f(4),4,f(4),lty=2)
+arrows(3.5,f(3),3.5,f(4), code=3,length=0.1,angle=20)
+text(3.5,(f(3)+f(4))/2, pos=4, "damping factor")
 ```
-* **Damping factor**: amplitude decreases by a factor $\exp(-\mu \rzero T/2)$ per cycle
 
 ## Stochasticity
 
-* Reed-Frost model
-   * household infection model: fixed (small) population, discrete infection generations
-   * start with **index cases**
-   * then ...
-* Gillespie algorithm
-* stochastic ODEs
+@allen_primer_2017
+
+## Reed-Frost model
+
+* notes on history: 1927-1928, 1951-1952 [@abbey_examination_1952; @reed_epidemic_1951-1], 1976 [@frost_conceptions_1976]
+* household infection model: fixed (small) population, discrete infection generations
+* start with **index cases**
+* then allow infection: probability of infection = $1 - (1-p_i)^I$
+* expected number of infections = $S \left(1-(1-p_i)^I\right)$
+* $\rzero=p_i N$
+* **hazard** interpretation
+   * probability of infection per $I$ per small $\Delta t$ = $\beta$
+   * prob of **non-infection** by 1 inf at time $\tau$ = $\exp(-\beta \tau) = 1-p_i$
+   * prob of non-inf by $I$ inf = $\exp(-\beta \tau)^I = \exp( -(\beta I) \tau)$
+   * hazard $\equiv$ FOI
+* can do standard analysis of equilibria, stability, etc. (${\bf X}_{t+1} = {\bf X}_t$; stability based on $|\lambda| \lessgtr 1$)
+* what is $\rzero$ ?
+* $r$ vs $R$ relationship: $\rzero = \left(1+\kappa r \bar G \right)^{1/\kappa}$
+    * $\kappa$ is the the reciprocal of the *shape parameter* ($\kappa=\textrm{CV}^2$)
+	* SIR: $\kappa=1$, $\rzero=1+r \bar G$. R-F: $\kappa \to 0$ so $\rzero = \exp(r\bar G)$
+
+## discrete-time stochastic R-F
+
+* stochastic version: $I_{t+1} \sim \textrm{Binom}\left(S_t, 1-(1-p_i)^{I_t}\right)$
+
+```{r reedfrost1,fig.cap="Reed-Frost ensemble",fig.width=7,fig.height=5,out.width="\\textwidth"}
+set.seed(101)
+rf <- function(nt,y0,p_i) {
+    res <- numeric(nt)
+    S <- y0[["S"]]
+    I <- res[1] <- y0[["I"]]
+    for (t in 2:nt) {
+        I <- rbinom(1, prob=1-(1-p_i)^I, size=S)
+        S <- S-I
+        if (I==0) break
+        res[t] <- I
+    }
+    return(res)
+}
+r0 <- rf(20, y0=c(S=99,I=1), p_i=0.02)
+r1 <- replicate(300, rf(20, y0=c(S=99,I=1), p_i=0.02))
+par(las=1,bty="l")
+matplot(r1,type="l",col=adjustcolor("black",alpha.f=0.2),lty=1)
+lines(rowMeans(r1),col=2,lwd=3)
+```
+
+```{r ggplot,echo=FALSE,message=FALSE,warning=FALSE,fig.cap="Reed-Frost ensemble 2",fig.width=7,fig.height=5,out.width="\\textwidth"}
+library(tidyverse); theme_set(theme_bw())
+colnames(r1) <- 1:ncol(r1)
+r1w <- (r1
+    %>% as_tibble()
+    %>% mutate(time=seq(n()))
+    %>% pivot_longer(names_to="rep",values_to="inf",-time)
+)
+ggplot(r1w,aes(time,inf)) + stat_sum(alpha=0.2) +
+    scale_size(range=c(1,12)) + theme(legend.position="none") +
+    stat_summary(fun=mean,geom="line",colour="red")
+```
+
+## Gillespie algorithm
+
+* define all processes in terms of *rates* (SIR: $\beta S I$, $\gamma I$), rather than gradients
+* *Poisson process*: exponentially distributed 
+
+```{r gillespie1}
+library(GillespieSSA2)
+parms <- c(beta = 5 , gamma = 1, N=100)
+final_time <- 10
+initial_state <- c(S = 99, I=1, R=0)
+reactions <- list(
+  reaction("beta*S*I/N",  c(S = -1, I=+1), name="transmission"),
+  reaction("gamma*I",   c(I = -1, R = +1), name="recovery")
+)
+set.seed(1)
+g1 <- ssa(initial_state,reactions,final_time,parms,
+          method=ssa_exact(),
+          sim_name="SIR")
+```
+
+```{r fig.cap="Gillespie realization",fig.width=7,fig.height=5,out.width="\\textwidth"}
+plot_ssa(g1) + geom_step()
+```
+
+```{r cache=TRUE, gillespie2,eval=FALSE,echo=FALSE}
+gfun <- function() {
+    res <- ssa(initial_state,reactions,final_time,parms,
+               method=ssa_exact(),
+               census_interval=0.1,
+               sim_name="SIR")
+    return(res$state[,"I"])
+}
+g2 <-replicate(300,gfun())
+```
+
+## stochastic ODEs
+
+* take limits of very large population size, short time, so that stochastic changes become a *Wiener process* (continuous, non-differentiable, changes are Gaussian)
+
+$$
+dX(t) = \underbrace{f(X(t))\, dt}_{\textrm{deterministic}} +
+\underbrace{G(X(t)) \, dW(t)}_{\textrm{stochastic}}
+$$
+
+* $f(X(t))$ is the original gradient vector
+* $G(X(t))$:
+    * need $(G \, dW)(G \, dW)^T$ to equal the **covariance** of $\Delta X$.
+
+$$
+C = E\left(
+\begin{array}{cc}
+(\Delta S)^2 & \Delta S \Delta I \\
+\Delta S \Delta I & (\Delta I)^2
+\end{array}
+\right)
+= \left( \begin{array}{cc}
+\beta S I/N & - \beta S I/N \\
+- \beta S I/N & \beta SI/N + \gamma I
+\end{array}
+\right) \Delta t
+$$
+
+Need the **matrix square root** of $C$, i.e. $G$ such that $G G^T=C$. (**Cholesky decomposition** or other)
+
+* **Euler-Maruyama** method: Euler integration  + noise scaled by $\sqrt{\Delta t}$
 
 ---
 
 ## References
+
