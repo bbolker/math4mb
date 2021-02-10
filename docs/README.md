@@ -31,13 +31,13 @@ schedule
 <table>
 <colgroup>
 <col style="width: 0%" />
-<col style="width: 2%" />
+<col style="width: 1%" />
+<col style="width: 3%" />
+<col style="width: 11%" />
 <col style="width: 4%" />
-<col style="width: 14%" />
-<col style="width: 5%" />
-<col style="width: 14%" />
-<col style="width: 55%" />
-<col style="width: 2%" />
+<col style="width: 35%" />
+<col style="width: 42%" />
+<col style="width: 1%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -95,11 +95,11 @@ schedule
 <tr class="odd">
 <td style="text-align: left;">05</td>
 <td style="text-align: left;">8-12 Feb</td>
+<td style="text-align: left;">(code/reedfrost_10feb.R)</td>
+<td style="text-align: left;">2</td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">8 Feb recording</a>; <a href="blackboard/bb_08feb.pdf">8 Feb blackboard</a>; <a href="https://web.microsoftstream.com/video/fab82e3a-1f43-40d4-a8ae-29711579bc39">10 Feb recording</a>; <a href="blackboard/bb_10feb.pdf">10 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_2.pdf">2</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">8 Feb recording</a>, <a href="blackboard/bb_08feb.pdf">8 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
