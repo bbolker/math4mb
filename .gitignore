@@ -13,4 +13,5 @@ figure/
 .Rhistory
 \.~lock*
 .ipynb_checkpoints
-
+*_cache/
+*_files/
