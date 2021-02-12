@@ -752,6 +752,12 @@ gfun <- function() {
 g2 <-replicate(300,gfun())
 ```
 
+```{r echo=FALSE}
+load("gbatch.RData")
+plot(g2[[1]],xlim=c(0,70),ylim=c(0,65),type="n")
+invisible(lapply(g2,lines,type="s",col=adjustcolor("black",alpha.f=0.3)))
+```
+
 ## stochastic ODEs
 
 * take limits of very large population size, short time, so that stochastic changes become a *Wiener process* (continuous, non-differentiable, changes are Gaussian)

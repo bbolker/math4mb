@@ -28,15 +28,15 @@ admin
 schedule
 --------
 
-<table>
+<table style="width:100%;">
 <colgroup>
 <col style="width: 0%" />
 <col style="width: 1%" />
+<col style="width: 7%" />
+<col style="width: 8%" />
 <col style="width: 3%" />
-<col style="width: 11%" />
-<col style="width: 4%" />
-<col style="width: 35%" />
 <col style="width: 42%" />
+<col style="width: 33%" />
 <col style="width: 1%" />
 </colgroup>
 <thead>
@@ -95,10 +95,10 @@ schedule
 <tr class="odd">
 <td style="text-align: left;">05</td>
 <td style="text-align: left;">8-12 Feb</td>
-<td style="text-align: left;">(code/reedfrost_10feb.R)</td>
+<td style="text-align: left;"><a href="code/reedfrost_10feb.R">10 Feb code</a>; <a href="code/reedfrost_11feb.R">11 Feb code</a></td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">8 Feb recording</a>; <a href="blackboard/bb_08feb.pdf">8 Feb blackboard</a>; <a href="https://web.microsoftstream.com/video/fab82e3a-1f43-40d4-a8ae-29711579bc39">10 Feb recording</a>; <a href="blackboard/bb_10feb.pdf">10 Feb blackboard</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">8 Feb recording</a>; <a href="blackboard/bb_08feb.pdf">8 Feb blackboard</a>; <a href="https://web.microsoftstream.com/video/fab82e3a-1f43-40d4-a8ae-29711579bc39">10 Feb recording</a>; <a href="blackboard/bb_10feb.pdf">10 Feb blackboard</a>; <a href="https://web.microsoftstream.com/video/c2c4425b-de56-4e1f-a709-e4faa3c34cee">11 Feb recording</a>; <a href="blackboard/bb_11feb.pdf">11 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
