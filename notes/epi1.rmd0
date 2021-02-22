@@ -19,7 +19,7 @@ library("knitr")
 knitr::opts_chunk$set(eval=TRUE)
 library("reticulate")
 ## scikit-learn? py_install("scikit-learn") works but py_module_available("scikit-learn") doesn't ...
-modules <- c("pandas","numpy","sympy")
+modules <- c("pandas","numpy","sympy","gillespy2")
 for (m in modules) {
     while (!py_module_available(m)) {
         cat("installing",m,"\n")
@@ -752,10 +752,48 @@ gfun <- function() {
 g2 <-replicate(300,gfun())
 ```
 
-```{r echo=FALSE}
-load("gbatch.RData")
-plot(g2[[1]],xlim=c(0,70),ylim=c(0,65),type="n")
-invisible(lapply(g2,lines,type="s",col=adjustcolor("black",alpha.f=0.3)))
+```{r get_batch,echo=FALSE}
+load("data/gbatch.RData")
+par(las=1,bty="l")
+with(g2[[1]],plot(time,state[,'I'],xlim=c(0,12),ylim=c(0,70),type="n",
+                  ylab="I"))
+invisible(lapply(g2,
+                 function(x) {
+                     with(x,lines(time,state[,'I'],type="s",col=adjustcolor("black",alpha.f=0.2)))
+                 }))
+```
+
+(See [here](https://scicomp.stackexchange.com/questions/338/python-implementations-of-gillespies-direct-method))
+
+```{python gillespie}
+import gillespy2
+class SIRv(gillespy2.Model):
+    def __init__(self, parameter_values=None):
+        # First call the gillespy2.Model initializer.
+        gillespy2.Model.__init__(self, name='SIRv')
+        # Define parameters for the rates of creation and dissociation.
+        ## can't use expressions in reaction rates ... ?? scale by N
+        beta = gillespy2.Parameter(name='beta', expression=0.05)
+        gamma= gillespy2.Parameter(name='gamma', expression=1)
+        N= gillespy2.Parameter(name='N', expression=100)
+        self.add_parameter([beta, gamma, N])
+        # Define variables for the molecular species representing M and D.
+        S = gillespy2.Species(name='susceptible', initial_value=99)
+        I = gillespy2.Species(name='infective',   initial_value=1)
+        self.add_species([S, I])
+        r_inf = gillespy2.Reaction(name="r_infection", rate=beta, reactants={S:1,I:1}, products={I:2})
+        r_rec = gillespy2.Reaction(name="r_recovery", rate=gamma, reactants={I:1}, products={})
+        self.add_reaction([r_inf, r_rec])
+        # Set the timespan for the simulation.
+        self.timespan(np.linspace(0, 10, 101))
+
+model = SIRv()
+results = model.run(number_of_trajectories=100)
+```
+
+```{python gplot2, fig.cap="Gillespie realization (Python)",fig.width=7,fig.height=5,out.width="\\textwidth"}
+results.plot();
+plt.show()
 ```
 
 ## stochastic ODEs
@@ -785,9 +823,129 @@ C = E\left(
 \right) \Delta t
 $$
 
-Need the **matrix square root** of $C$, i.e. $G$ such that $G G^T=C$. (**Cholesky decomposition** or other)
+Need the **matrix square root** of $C$, i.e. $G$ such that $G G^T=C$. (For large/complex methods we probably want to use a numerical method such as **Cholesky decomposition**. In this
+case:
+
+$$
+G = \left(
+\begin{array}{cc}
+-\sqrt{\beta S I/N} &   0 \\
+\sqrt{\beta S I/N} & -\sqrt{\gamma I}
+\end{array}
+\right)
+$$
 
 * **Euler-Maruyama** method: Euler integration  + noise scaled by $\sqrt{\Delta t}$
+
+```{python SIR_em}
+def SIR_2d_grad_stoch(x,t,params):
+   """basic gradient definitions for SIR model"""
+   beta,gamma,N = params   ## unpack parameters
+   S,I = x             ## unpack state variables
+   incid = beta*S*I/N
+   grad = np.array([-incid, incid-gamma*I])
+   G = np.matrix([[-np.sqrt(incid), 0], [np.sqrt(incid), -np.sqrt(gamma*I)]])
+   return((grad,G))
+
+def em_step(y0, t, params, func, dt):
+    """take a single Euler-Maruyama step"""
+    grad, G  = func(y0, t, params)
+    nx = len(y0)
+    stoch = np.matmul(G, np.random.normal(size=(nx,1)))*np.sqrt(dt)
+    return y0 + grad*dt + stoch.reshape(nx)
+
+dt = 0.001
+t_vec = np.arange(0,8,0.001)
+params = (4,1,100) ## extra parameters (beta, gamma,N)
+y0 = (99, 1)
+em_step(y0, 0, params, SIR_2d_grad_stoch, 0.001)
+
+np.random.seed(101)
+res = np.zeros(shape=(len(t_vec),2))
+res[0,:] = y0
+for i in range(1,len(t_vec)):
+    res[i,:] = em_step(res[i-1,:], t, params, SIR_2d_grad_stoch, dt)
+```
+
+```{python plotstoch, fig.cap="Euler-Maruyama realization",fig.width=7,fig.height=5,out.width="\\textwidth"}
+plt.plot(t_vec,res);
+plt.show()
+```
+
+
+# Sustained oscillations in epidemic systems
+
+## Problem
+
+Using [measles data from Ontario](data/meas_ca_on__1939-89_wk.csv):
+
+```{r meas,fig.cap="Ontario measles data",fig.width=7,fig.height=5,out.width="\\textwidth"}
+on_meas <- read.csv("data/meas_ca_on__1939-89_wk.csv",skip=3)
+plot(cases~numdate,data=on_meas,type="l")
+```
+
+```{r wavelets,fig.cap="wavelet analysis of measles data",fig.width=7,fig.height=8,out.width="\\textwidth"}
+library(dplR)
+m <- on_meas[on_meas$numdate<1970,]
+## https://rstudio-pubs-static.s3.amazonaws.com/9428_1197bd003ebd43c49b429f22ea4f36e5.html
+wave.out <- morlet(m$cases,m$numdate)
+wave.out$period <- wave.out$period/52
+wavelet.plot(wave.out,key.col=heat.colors(10),useRaster=TRUE)
+```
+
+## Bartlett cycles
+
+```{r stoch_SIR_vital}
+N <- 100000; R0 <- 6; infper <- 1/26
+parms <- c(beta = R0/infper , gamma = 1/infper, N=N, mu=1/50)
+eq <- with(as.list(parms), c(S=N/R0, I=N*(mu/beta)*(R0-1),
+                             R=N*(1-1/R0-(mu/beta)*(R0-1))))
+final_time <- 200
+reactions <- list(
+  reaction("mu*N",  c(S = +1), name="birth"),
+  reaction("mu*S",  c(S = -1), name="S_death"),
+  reaction("mu*I",  c(I = -1), name="I_death"),
+  reaction("mu*R",  c(R = -1), name="R_death"),  
+  reaction("beta*S*I/N",  c(S = -1, I=+1), name="transmission"),
+  reaction("gamma*I",     c(I = -1, R=+1), name="recovery"),
+  reaction("immig", c(I=+1, R=-1), name="cheat")
+)
+set.seed(3)
+g2 <- ssa(round(eq),
+          reactions,
+          final_time,
+          c(parms,immig=30),
+          census_interval=1/52,
+          method=ssa_exact(), ## ode_em(noise_strength=100),
+          sim_name="SIR_vital")
+```
+
+```{r plot_bartlett, fig.cap="Bartlett cycles",fig.width=7,fig.height=5,out.width="\\textwidth"}
+with(g2,plot(state[(52*190):nrow(state),"I"],type="l"))
+```
+
+## seasonal forcing
+
+```{r sir_seas}
+N <- 1; R0 <- 15; infper <- 1/26
+parms <- c(beta = R0/infper , gamma = 1/infper, N=N, mu=1/50, delta=0.2)
+eq <- with(as.list(parms), c(S=N/R0, I=N*(mu/beta)*(R0-1),
+                             R=N*(1-1/R0-(mu/beta)*(R0-1))))
+SIRgradv <- function(t, y, parms) {
+    g <- with(as.list(c(y,parms)), {
+        beta1 <- beta*(1+delta*sin(2*pi*t))
+        c(-beta1*S*I/N+mu*(N-S), beta1*S*I/N-(mu+gamma)*I, gamma*I-mu*R)
+    })
+    return(list(g))
+}
+mm <- ode(y=eq, times=seq(0,50,by=1/52), func=SIRgradv, parms=parms)
+```
+
+```{r plotseas, fig.cap="seasonally forced SIR",fig.width=7,fig.height=5,out.width="\\textwidth"}
+plot(I~time, as.data.frame(mm),type="l")
+```
+
+See @earn_mathematical_2009 for more (PDF [here](https://ms.mcmaster.ca/earn.old/pdfs/Earn2009_PCMI_MathEpi.pdf)) ...
 
 ---
 
