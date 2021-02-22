@@ -737,7 +737,7 @@ g1 <- ssa(initial_state,reactions,final_time,parms,
           sim_name="SIR")
 ```
 
-```{r fig.cap="Gillespie realization",fig.width=7,fig.height=5,out.width="\\textwidth"}
+```{r plot_ssa,fig.cap="Gillespie realization",fig.width=7,fig.height=5,out.width="\\textwidth"}
 plot_ssa(g1) + geom_step()
 ```
 
@@ -752,7 +752,9 @@ gfun <- function() {
 g2 <-replicate(300,gfun())
 ```
 
-```{r get_batch,echo=FALSE}
+Run many simulations (code [here](../code/gbatch.R)):
+
+```{r plot_batch,echo=FALSE,fig.cap="ensemble of Gillespie realizations",fig.width=7,fig.height=5,out.width="\\textwidth"}
 load("data/gbatch.RData")
 par(las=1,bty="l")
 with(g2[[1]],plot(time,state[,'I'],xlim=c(0,12),ylim=c(0,70),type="n",
@@ -763,7 +765,7 @@ invisible(lapply(g2,
                  }))
 ```
 
-(See [here](https://scicomp.stackexchange.com/questions/338/python-implementations-of-gillespies-direct-method))
+(See [here](https://scicomp.stackexchange.com/questions/338/python-implementations-of-gillespies-direct-method) for details on the `gillespy2` Python module)
 
 ```{python gillespie}
 import gillespy2
@@ -837,7 +839,7 @@ $$
 
 * **Euler-Maruyama** method: Euler integration  + noise scaled by $\sqrt{\Delta t}$
 
-```{python SIR_em}
+```{python SIR_em, warning=FALSE}
 def SIR_2d_grad_stoch(x,t,params):
    """basic gradient definitions for SIR model"""
    beta,gamma,N = params   ## unpack parameters
