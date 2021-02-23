@@ -28,15 +28,15 @@ admin
 schedule
 --------
 
-<table style="width:100%;">
+<table>
 <colgroup>
 <col style="width: 0%" />
 <col style="width: 1%" />
+<col style="width: 2%" />
 <col style="width: 7%" />
-<col style="width: 8%" />
-<col style="width: 3%" />
-<col style="width: 42%" />
-<col style="width: 33%" />
+<col style="width: 37%" />
+<col style="width: 7%" />
+<col style="width: 43%" />
 <col style="width: 1%" />
 </colgroup>
 <thead>
@@ -67,7 +67,7 @@ schedule
 <td style="text-align: left;">18-22 Jan</td>
 <td style="text-align: left;">epidemic modeling 2</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_0.pdf">0</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_%5B0%5D(assignments/assignment_0.pdf).pdf">[0](assignments/assignment_0.pdf)</a></td>
 <td style="text-align: left;"><span class="citation" data-cites="levins_strategy_1966">Levins (1966)</span>; <a href="readings/Bolker_2008_sec1.3.pdf">Bolker (2008) sec 1.3</a> + DQs</td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/a3303573-04d0-46f6-b483-bfd90e93acae">20 Jan recording</a> , <a href="blackboard/bb_20jan.pdf">20 Jan blackboard</a> , <a href="https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a">21 Jan recording</a>, <a href="blackboard/bb_21jan.pdf">21 Jan blackboard</a></td>
 <td style="text-align: left;"></td>
@@ -77,7 +77,7 @@ schedule
 <td style="text-align: left;">25-29 Jan</td>
 <td style="text-align: left;">epidemic modeling 3</td>
 <td style="text-align: left;"><a href="code/ode_ex1.Rmd">basic ODEs</a></td>
-<td style="text-align: left;"><a href="assignments/assignment_1.pdf">1</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_%5B1%5D(assignments/assignment_1.pdf).pdf">[1](assignments/assignment_1.pdf)</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/d3b6032c-0b74-4d5d-8656-f7f1dedc6b3a">25 Jan recording</a> , <a href="blackboard/bb_25jan.pdf">25 Jan blackboard</a> , <a href="https://web.microsoftstream.com/video/a2e67217-6b1f-4a81-9b0a-f71f5f9f3815">27 Jan recording</a>, <a href="blackboard/bb_27jan.pdf">27 Jan blackboard</a></td>
 <td style="text-align: left;"></td>
@@ -95,11 +95,11 @@ schedule
 <tr class="odd">
 <td style="text-align: left;">05</td>
 <td style="text-align: left;">8-12 Feb</td>
-<td style="text-align: left;"><a href="code/reedfrost_10feb.R">10 Feb code</a>; <a href="code/reedfrost_11feb.R">11 Feb code</a></td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong>more</strong> epidemics!</td>
+<td style="text-align: left;"><a href="code/reedfrost_10feb.R">10 Feb code</a> , <a href="code/reedfrost_11feb.R">11 Feb code</a></td>
+<td style="text-align: left;"><a href="assignments/assignment_%5B2%5D(assignments/assignment_2.pdf).pdf">[2](assignments/assignment_2.pdf)</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">8 Feb recording</a>; <a href="blackboard/bb_08feb.pdf">8 Feb blackboard</a>; <a href="https://web.microsoftstream.com/video/fab82e3a-1f43-40d4-a8ae-29711579bc39">10 Feb recording</a>; <a href="blackboard/bb_10feb.pdf">10 Feb blackboard</a>; <a href="https://web.microsoftstream.com/video/c2c4425b-de56-4e1f-a709-e4faa3c34cee">11 Feb recording</a>; <a href="blackboard/bb_11feb.pdf">11 Feb blackboard</a></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/73e16706-bba4-4fe0-8259-a8b90698baac">8 Feb recording</a> , <a href="blackboard/bb_08feb.pdf">8 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/fab82e3a-1f43-40d4-a8ae-29711579bc39">10 Feb recording</a>, <a href="blackboard/bb_10feb.pdf">10 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/c2c4425b-de56-4e1f-a709-e4faa3c34cee">11 Feb recording</a>, <a href="blackboard/bb_11feb.pdf">11 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
@@ -115,11 +115,11 @@ schedule
 <tr class="odd">
 <td style="text-align: left;">07</td>
 <td style="text-align: left;">22-26 Feb</td>
+<td style="text-align: left;">epidemics + neurons</td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="assignments/assignment_%5Bfeedback%20poll%5D(https://forms.office.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HcnItkWVZh0NIs3WqSgnk1GFUQ1k0QzFDM0ZNTTNIWU1RMUUyU1BQNjBIWS4u).pdf">[feedback poll](https://forms.office.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HcnItkWVZh0NIs3WqSgnk1GFUQ1k0QzFDM0ZNTTNIWU1RMUUyU1BQNjBIWS4u)</a>;<a href="assignments/assignment_%20%5Bproject%20draft%5D(assignments/project_draft.html).pdf">[project draft](assignments/project_draft.html)</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/assignment_3.pdf">3</a></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/241c21c7-e351-479d-902b-7b87c0374af2">22 Feb recording</a>, <a href="blackboard/bb_22feb.pdf">22 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">

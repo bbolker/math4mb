@@ -39,6 +39,10 @@ FOO=
 	Rscript -e "rmarkdown::render(\"$<\")"
 	mv $@ docs/$@
 
+%.html: %.md $(BIBFILE)
+	Rscript -e "rmarkdown::render(\"$<\")"
+	mv $@ docs/$@
+
 ###
 ## everything below here old/untested?
 %.slides.pdf: %.rmd0 gpp/beamer.gpp $(BIBFILE) my.beamer
