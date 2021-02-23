@@ -61,9 +61,8 @@ mklinks <- function(x, dir="notes", prefix="",extension="pdf",raw=FALSE) {
 }
 
 dd <- (read_csv("../admin/schedule.csv")
-    %>% mutate_at("assignments",~mklinks(., "assignments","assignment_","pdf"))
-    %>% mutate_at("handouts", ~mklinks(.,raw=TRUE))
-    %>% mutate_at("recordings", ~mklinks(.,raw=TRUE))
+    ## %>% mutate_at("assignments",~mklinks(., "assignments","assignment_","pdf"))
+    %>% mutate(across(c(assignments,handouts,recordings),~mklinks(., raw=TRUE)))
 )
 knitr::kable(dd)
 ```
