@@ -163,8 +163,8 @@ plot_hh <- function(h) {
 
 ```{r fig.width=10,fig.height=6,out.width="\\textwidth",fig.cap="Hodgkin-Huxley (I=0)"}
 library(deSolve)
-res <- ode(y=y0,times=seq(0,60,by=0.05), func=HHgrad, parms=parms0)
-plot_hh(res)
+res0 <- ode(y=y0,times=seq(0,60,by=0.05), func=HHgrad, parms=parms0)
+plot_hh(res0)
 ```
 
 ```{r fig.width=10,fig.height=6,out.width="\\textwidth",fig.cap="Hodgkin-Huxley (I=-7)"}
@@ -202,7 +202,61 @@ matplot(-Ivec,res[,5:6],type="l",lty=1,col=1, ylab="m")
 matplot(-Ivec,res[,7:8],type="l",lty=1,col=1, ylab="h")
 ```
 
+## what do we now?
 
+* project into lower dimensions
+* simplification: separate into **slow** and **fast** components
+* (find small values?)
+* map changes in nullclines (how?)
+
+```{r}
+library(phaseR)
+HHeq <- res0[nrow(res0),c("v","n","m","h")]
+HHgrad2d <- function(t, y, parms) {
+    full_y <- c(v=y[["v"]],m=y[["m"]],n=HHeq[["n"]],h=HHeq[["h"]])
+    list(HHgrad(t,full_y,parms)[[1]][c("v","m")])
+}
+HHgrad2d(0,y0[c("v","m")], parms0)
+```
+
+```{r eval=FALSE}
+phasePlaneAnalysis(HHgrad2d,xlim=c(-120,10),
+                   parameters=parms,
+                   state.names=c("v","m"),
+                   ylim=c(0,1))
+
+```
+
+## Analysis: Poincaré-Bendixson
+
+* bounded trajectories that don't approach a singular point are closed & periodic or approach a closed & periodic orbit
+   * bounded region $D$ that contains a single repelling (unstable) point, all flow inward
+   * bounded annulus $A$ containing no equilibria
+* Bendixson: if $D$ is simply connected, $\partial F/\partial x + \partial G/\partial y$ is not identically zero and doesn't change sign, then no closed orbits exist
+
+## Cubic nullclines
+
+$$
+\begin{split}
+\frac{du}{dt} & = v - G(u) \\
+\frac{dv}{dt} & = - u 
+\end{split}
+$$
+
+and $G(u)=-(G(-u))$
+
+* nullclines $v=G(u)$, $u=0$
+
+## Fitzhugh-Nagumo model
+
+$$
+\begin{split}
+\frac{dx}{dt} & = c \Bigl( y + x - x^3/3 + z(t) \Bigr)  \quad \approx \textrm{Voltage} \\
+\frac{dy}{dt} & = - \frac{ x- + a + by}{c} \quad \approx \textrm{recovery}
+\end{split}
+$$
+
+## Hopf bifurcations
 
 ## References
 
