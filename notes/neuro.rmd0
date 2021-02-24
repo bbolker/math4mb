@@ -1,0 +1,208 @@
+---
+title: "Math models in neurobiology"
+author: "Ben Bolker"
+date: '`r strsplit(as.character(Sys.time())," ")[[1]][1]` <#copyright> BMB  (except textbook material/other images)'
+urlcolor: blue
+bibliography: math4mb.bib
+output: tufte_handout
+header-includes:
+  - \hypersetup{colorlinks=true}
+---
+
+```{r setup,include=FALSE}
+library(ggplot2); theme_set(theme_bw())
+library(tidyverse)
+```
+
+```{r opts,include=FALSE}
+library("knitr")
+knitr::opts_chunk$set(eval=TRUE)
+library("reticulate")
+## scikit-learn? py_install("scikit-learn") works but py_module_available("scikit-learn") doesn't ...
+modules <- c("pandas","numpy","sympy","gillespy2")
+for (m in modules) {
+    while (!py_module_available(m)) {
+        cat("installing",m,"\n")
+        py_install(m)
+    }
+}
+use_python("/usr/bin/python3")
+matplotlib <- import("matplotlib")
+matplotlib$use("Agg", force = TRUE)
+```
+
+\newcommand{\rzero}{\mathcal{R}_0}
+
+# Models of neuron excitation
+
+This material will follow @edelstein-keshet_8_2005 (E-K) closely: I was able to get the PDF from [here](https://epubs.siam.org/doi/pdf/10.1137/1.9780898719147.ch8), let me know if you want it and don't have access to it. (Much more detail in @ermentrout_mathematical_2010.)
+
+## Limit cycles
+
+* non-point attractor of deterministic systems; repeated trajectory, periodic orbits
+*  "any simple oriented closed curve trajectory that does not contain singular points"
+
+## Properties
+
+* stable or unstable
+* hard to get limit cycles in epidemic systems
+   * orbits via stochastic perturbation of weakly stable spirals
+   * orbits via seasonl forcing, ditto
+   * plenty of math models with limit cycles but **usually weird** (e.g. @wang_bifurcations_2004)
+* Lotka-Volterra predator-prey system has **neutrally stable** cycles
+   * but **Rosenzweig-MacArthur** model = predator-prey + density-dependent prey limitation, nonlinearity in predation rate does have limit cycles: see E-K §8.7
+
+## Limit cycles (part 2)
+
+* can occur in any phase space >1D
+* easiest to analyze in 2D (**Poincaré-Bendixson theorem**)
+
+## Neurons
+
+* dendrites, soma, axon
+* balance of ionic dynamics: Na+, K+, Cl-
+    * axon -50 mV below environment in resting state
+	* maintained by active ion pumping, e.g.
+        * Na+: 30 vs 117 millimolar interior/exterior
+        * K+: 90 vs 3 mmol
+        * Cl-: 4 vs 120 mmol
+		* A- ("other"): 0 vs 116 mmol
+		
+![](pix/ek_fig8_3.png)
+
+* sequence:
+   * voltage increases
+   * Na+ channels open, Na+ in (further $\nearrow$ V)
+   * K+ channels open, K+ out (V $\searrow$)
+   * Na+ channels close
+   * changes in V trigger firing at neighbouring site, wave propagates
+* experiments:
+   * **voltage clamp**: apply/measure spatially homogeneous V dynamics
+   * **patch clamp**: measure dynamics of individual pores
+* electric circuit analog:
+   * Voltage drop ($\approx$ battery) + resistor + capacitor
+   * Several **parallel** currents (Na+, K+, etc.)
+       * Ohm ($V=IR=I/g$, $g \equiv$ **conductance**)
+	   * Faraday ($V=q/C$) where $q\equiv$ **charge**)
+	   * $I = \sum V g_i  = q/C$ (typo in E-K eq 4bb??)
+	   * $dV/dt = (dq/dt)/C = I/C = V/C \sum g_i$
+
+Skipping a few steps:
+
+\newcommand{\gc}[1]{g_{\textrm{\small {#1}}}}
+\newcommand{\vv}[1]{v_{\textrm{\small {#1}}}}
+\newcommand{\gcb}[1]{{\bar g}_{\textrm{\small {#1}}}}
+
+\[
+\frac{dv}{dt} = -\frac{1}{C}\Bigl(
+    \gc{Na}(v)(v-\vv{Na}) +
+    \gc{K}(v)(v-\vv{K}) +
+    \gc{L}(v-\vv{L})
+	\Bigr)
+\]
+
+($L$= "everything else"; only $\gc{Na}$ and $\gc{K}$ are concentration-dependent)
+
+* $\gc{Na}$ and $\gc{K}$ are **strongly** nonlinear functions of $v$
+* $\gc{Na} = \gcb{Na} m^3 h$; $\gc{K} = \gcb{K} n^4$
+
+$$
+\begin{split}
+\frac{dn}{dt} & = \alpha_n(v)(1-n) - \beta_n(v)n \\
+\frac{dm}{dt} & = \alpha_m(v)(1-m) - \beta_m(v)m \\
+\frac{dh}{dt} & = \alpha_h(v)(1-h) - \beta_h(v)h
+\end{split}
+$$
+
+Help from [here](https://magesblog.com/post/2012-06-25-hodgkin-huxley-model-in-r/).
+(Didn't actually change much; found a typo. Change in sign convention:
+$V \to -(V+65)$
+
+```{r hh_def}
+parms0 <- c(g_bar_Na=120,g_bar_K=36,g_L=0.3, v_Na=-115, v_K=12, v_L=-10.5989,
+           C=1,I=0)
+alpha <- function(v,type) {
+    switch(type,
+           m=0.1*(v+25)/(exp((v+25)/10) -1),
+           h=0.07*exp(v/20),
+           n=0.01*(v+10)/(exp((v+10)/10) -1)
+           )
+}
+beta <- function(v,type) {
+    switch(type,
+           m=4*exp(v/18),
+           h=1/exp((v+30)/10 + 1),
+           n=0.125*exp(v/80)
+           )
+}
+HHgrad <- function(t,y,parms) {
+    g <- with(as.list(c(y,parms)),
+         c(v=-1/C*(-I + g_bar_Na*m^3*h*(v-v_Na) +
+                   g_bar_K*n^4*(v-v_K) +
+                   g_L*(v-v_L)),
+           n=alpha(v,"n")*(1-n) - beta(v,"n")*n,
+           m=alpha(v,"m")*(1-m) - beta(v,"m")*m,
+           h=alpha(v,"h")*(1-h) - beta(v,"h")*h)
+         )
+    list(g)
+}
+```
+
+
+```{r hh_setup}
+y0 <- c(v=0,n=0.3,m=0.05,h=0.6)
+HHgrad(0,y0,parms0)
+plot_hh <- function(h) {
+    op <- par(mfrow=c(1,2),las=1,bty="l")
+    plot(h[,1],h[,2], type="l",xlab="time",ylab="V")
+    cvec <- c(1,2,4) ## colours
+    matplot(h[,1],h[,3:5], type="l",lty=1,xlab="time",ylab="", col=cvec)
+    legend("topright",legend=c("n","m","h"),lty=1,col=cvec)
+}
+```
+
+```{r fig.width=10,fig.height=6,out.width="\\textwidth",fig.cap="Hodgkin-Huxley (I=0)"}
+library(deSolve)
+res <- ode(y=y0,times=seq(0,60,by=0.05), func=HHgrad, parms=parms0)
+plot_hh(res)
+```
+
+```{r fig.width=10,fig.height=6,out.width="\\textwidth",fig.cap="Hodgkin-Huxley (I=-7)"}
+parms_f <- function(I,parms=parms0) {
+    parms[["I"]] <- I
+    return(parms)
+}
+res2 <- ode(y=y0,times=seq(0,100,by=0.05), func=HHgrad, parms=parms_f(-7))
+plot_hh(res2)
+```
+
+What about a **bifurcation diagram**?
+
+```{r bifurc,cache=TRUE}
+get_maxmin <- function(I) {
+    res <- ode(y=y0,times=c(0,seq(100,200,by=0.1)),
+               func=HHgrad, parms=parms_f(I))
+    res <- as.data.frame(res[-1,-1]) ## drop time and first row
+    ans <- with(res,
+                c(v_min=min(v),v_max=max(v),
+                  n_min=min(n),n_max=max(n),
+                  m_min=min(m),m_max=max(m),
+                  h_min=min(h),h_max=max(h)))
+    return(ans)
+}
+Ivec <- seq(-1,-4,by=-0.05)
+res <- t(sapply(Ivec,get_maxmin))
+```
+
+```{r bifplot, echo=FALSE, fig.width=8,fig.height=8,out.width="\\textwidth",fig.cap="Hodgkin-Huxley bifurcation"}
+par(mfrow=c(2,2),las=1,bty="l")
+matplot(-Ivec,res[,1:2],type="l",lty=1,col=1, ylab="V")
+matplot(-Ivec,res[,3:4],type="l",lty=1,col=1, ylab="n")
+matplot(-Ivec,res[,5:6],type="l",lty=1,col=1, ylab="m")
+matplot(-Ivec,res[,7:8],type="l",lty=1,col=1, ylab="h")
+```
+
+
+
+## References
+

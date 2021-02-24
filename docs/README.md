@@ -116,7 +116,7 @@ schedule
 <td style="text-align: left;">07</td>
 <td style="text-align: left;">22-26 Feb</td>
 <td style="text-align: left;">epidemics + neurons</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="notes/neuro.pdf">neuro notes</a></td>
 <td style="text-align: left;"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HcnItkWVZh0NIs3WqSgnk1GFUQ1k0QzFDM0ZNTTNIWU1RMUUyU1BQNjBIWS4u">feedback poll</a>, <a href="assignments/project_draft.html">project draft</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/241c21c7-e351-479d-902b-7b87c0374af2">22 Feb recording</a>, <a href="blackboard/bb_22feb.pdf">22 Feb blackboard</a></td>
