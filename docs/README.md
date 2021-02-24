@@ -119,7 +119,7 @@ schedule
 <td style="text-align: left;"><a href="notes/neuro.pdf">neuro notes</a></td>
 <td style="text-align: left;"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HcnItkWVZh0NIs3WqSgnk1GFUQ1k0QzFDM0ZNTTNIWU1RMUUyU1BQNjBIWS4u">feedback poll</a>, <a href="assignments/project_draft.html">project draft</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/241c21c7-e351-479d-902b-7b87c0374af2">22 Feb recording</a>, <a href="blackboard/bb_22feb.pdf">22 Feb blackboard</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/241c21c7-e351-479d-902b-7b87c0374af2">22 Feb recording</a> , <a href="blackboard/bb_22feb.pdf">22 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/3ad92b72-d830-4fbb-8477-1a6c0f216c4a">24 Feb recording</a>, <a href="blackboard/bb_24feb.pdf">24 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
@@ -137,8 +137,8 @@ schedule
 <td style="text-align: left;">08-12 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
 <td style="text-align: left;">midterm test (take-home)</td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
