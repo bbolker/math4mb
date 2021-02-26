@@ -28,7 +28,7 @@ admin
 schedule
 --------
 
-<table>
+<table style="width:100%;">
 <colgroup>
 <col style="width: 0%" />
 <col style="width: 1%" />
@@ -41,7 +41,7 @@ schedule
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">1week</th>
+<th style="text-align: left;">week</th>
 <th style="text-align: left;">date</th>
 <th style="text-align: left;">topics</th>
 <th style="text-align: left;">handouts</th>
@@ -125,10 +125,10 @@ schedule
 <tr class="even">
 <td style="text-align: left;">08</td>
 <td style="text-align: left;">01-05 Mar</td>
+<td style="text-align: left;">neuro 2</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="citation" data-cites="innocenti_dynamical_2007">Innocenti et al. (2007)</span></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -197,6 +197,12 @@ schedule
 
 References
 ----------
+
+Innocenti, Giacomo, Alice Morelli, Roberto Genesio, and Alessandro
+Torcini. 2007. “Dynamical Phases of the Hindmarsh-Rose Neuronal Model:
+Studies of the Transition from Bursting to Spiking Chaos.” *Chaos: An
+Interdisciplinary Journal of Nonlinear Science* 17 (4): 043128.
+<https://doi.org/10.1063/1.2818153>.
 
 Levins, R. 1966. “The Strategy of Model Building in Population Biology.”
 *American Scientist* 54: 421–31.
