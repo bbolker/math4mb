@@ -209,7 +209,7 @@ matplot(-Ivec,res[,7:8],type="l",lty=1,col=1, ylab="h")
 * (find small values?)
 * map changes in nullclines (how?)
 
-```{r}
+```{r phaseR,message=FALSE}
 library(phaseR)
 HHeq <- res0[nrow(res0),c("v","n","m","h")]
 HHgrad2d <- function(t, y, parms) {
@@ -247,16 +247,88 @@ and $G(u)=-(G(-u))$
 
 * nullclines $v=G(u)$, $u=0$
 
+![](pix/ek_fig8_13.png)
+
 ## Fitzhugh-Nagumo model
 
 $$
 \begin{split}
 \frac{dx}{dt} & = c \Bigl( y + x - x^3/3 + z(t) \Bigr)  \quad \approx \textrm{Voltage} \\
-\frac{dy}{dt} & = - \frac{ x- + a + by}{c} \quad \approx \textrm{recovery}
+\frac{dy}{dt} & = - \frac{ x-  a + by}{c} \quad \approx \textrm{recovery}
 \end{split}
 $$
 
-## Hopf bifurcations
+Nullclines: 
+
+$$
+\begin{split}
+y & = x^3-x-z \quad (x'=0) \\
+y & = (a-x)/b
+\end{split}
+$$
+
+[Fitzhugh-Nagumo in Python](https://neuronaldynamics-exercises.readthedocs.io/en/latest/exercises/phase-plane-analysis.html)
+
+```{python}
+import numpy as np
+import scipy.integrate
+def FH_grad(S,t,params):
+   """gradient of FH model (autonomous)"""
+   a,b,c,z = params   ## unpack parameters
+   x,y = S             ## unpack state variables
+   return(np.array([c*(y+x-x**3/3 + z),-(x-a+b*y)/c]))
+```
+```{python}
+t_vec = np.linspace(0,8,101)
+params0 = (0.7,0.8,3,0) ## a,b,c,z
+y0 = (-1,1)
+FH_sol1 = scipy.integrate.odeint(FH_grad,
+                                 y0=y0,
+                                 t=t_vec,
+                                 args=(params0,))
+```
+
+```{python}
+import matplotlib.pyplot as plt
+plt.plot(FH_sol1[:,0], FH_sol1[:,1]);
+plt.show()
+```
+
+```{python}
+def flowfield(params, xlim=(-2,2,10), ylim=(-1,1,10), tvec=np.linspace(0,8,101)):
+    for x in np.linspace(xlim[0],xlim[1],xlim[2]):
+        for y in np.linspace(ylim[0],ylim[1],ylim[2]):
+             FH_sol = scipy.integrate.odeint(FH_grad,
+                                             y0=(x,y),
+                                             t=t_vec,
+                                             args=(params,))
+             plt.plot(FH_sol[:,0], FH_sol[:,1], 'b');
+    plt.show()
+    return None
+```
+
+```{python FH1,fig.width=5,fig.height=5,out.width="\\textwidth",fig.cap="F-H flow field (z=0)"}
+flowfield(params0)
+```
+
+```{python FH2,fig.width=5,fig.height=5,out.width="\\textwidth",fig.cap="F-H flow field (z=0.4)"}
+params1 = list(params0)
+params1[3] = -0.4  ## set new z value
+params1 = tuple(params1)
+flowfield(params1)
+```
+
+van der Pol oscillator:
+
+## Rapid intro to chaos for @innocenti_dynamical_2007
+
+- ISI = inter-spike interval
+- Poincaré map
+- Floquet multipliers
+- bounded trajectories with *sensitive dependence on initial conditions*
+- positive *Lyapunov exponent* (= $\int \lambda(\tau) \, d\tau$)
+
+continuation methods: @blyth_tutorial_2020; [PyDSTool](https://pydstool.github.io/PyDSTool/FrontPage.html) 
 
 ## References
 
