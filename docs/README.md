@@ -126,7 +126,7 @@ schedule
 <td style="text-align: left;">08</td>
 <td style="text-align: left;">01-05 Mar</td>
 <td style="text-align: left;">neuro 2</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="notes/chaos.pdf">chaos notes</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="citation" data-cites="innocenti_dynamical_2007">Innocenti et al. (2007)</span></td>
 <td style="text-align: left;"></td>

@@ -1,0 +1,76 @@
+---
+title: "Brief stuff on deterministic chaos"
+author: "Ben Bolker"
+date: '`r strsplit(as.character(Sys.time())," ")[[1]][1]` <#copyright> BMB  (except textbook material/other images)'
+urlcolor: blue
+bibliography: math4mb.bib
+output: tufte_handout
+header-includes:
+  - \hypersetup{colorlinks=true}
+---
+
+```{r setup,include=FALSE}
+library(ggplot2); theme_set(theme_bw())
+library(tidyverse)
+```
+
+```{r opts,include=FALSE}
+library("knitr")
+knitr::opts_chunk$set(eval=TRUE)
+library("reticulate")
+## scikit-learn? py_install("scikit-learn") works but py_module_available("scikit-learn") doesn't ...
+modules <- c("pandas","numpy","sympy","gillespy2")
+for (m in modules) {
+    while (!py_module_available(m)) {
+        cat("installing",m,"\n")
+        py_install(m)
+    }
+}
+use_python("/usr/bin/python3")
+matplotlib <- import("matplotlib")
+matplotlib$use("Agg", force = TRUE)
+```
+
+\newcommand{\rzero}{\mathcal{R}_0}
+
+## Chaos
+
+* sensitive dependence on initial conditions
+* bounded
+
+## Lyapunov exponent/spectrum
+
+* Long-term average dynamics
+* Expansion/contraction of phase space
+*
+
+## Fractal dimension
+
+* box-counting
+* Kaplan-Yorke
+* Correlation dimension (Grassberger-Procaccia)
+    * $C(\epsilon) = \lim_{N \to \infty} g/N^2$
+	* $C(\epsilon) \propto \epsilon^\nu$
+	* log-log graph
+
+## Embedding
+
+* Takens theorem
+
+## Poincaré map
+
+## continuation methods
+
+- @blyth_tutorial_2020; [PyDSTool](https://pydstool.github.io/PyDSTool/FrontPage.html); XPPAUT
+
+@krylova_effects_2013
+
+![](pix/krylova.png)
+
+@bolker_chaos_1993
+
+![](pix/bolker_grenfell.png)
+
+
+## References
+
