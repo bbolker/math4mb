@@ -16,3 +16,6 @@ figure/
 *_cache/
 *_files/
 *.Rout
+pdfs/
+_auto*
+__*

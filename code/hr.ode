@@ -1,0 +1,6 @@
+# Hindmarsh-Rose Fast System
+init x=0.5 y=0.5
+par W=-2
+dx/dt = 3*x**2 - x**3 + y - W
+dy/dt = 1 - 5*x**2 - y
+done

@@ -28,15 +28,15 @@ admin
 schedule
 --------
 
-<table style="width:100%;">
+<table>
 <colgroup>
 <col style="width: 0%" />
 <col style="width: 1%" />
 <col style="width: 2%" />
-<col style="width: 9%" />
-<col style="width: 20%" />
 <col style="width: 8%" />
-<col style="width: 54%" />
+<col style="width: 19%" />
+<col style="width: 13%" />
+<col style="width: 52%" />
 <col style="width: 1%" />
 </colgroup>
 <thead>
@@ -138,7 +138,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="notes/continuation.pdf">continuation notes</a></td>
 <td style="text-align: left;"><a href="assignments/midterm.pdf">midterm test</a> (take-home, due Mon 15 Mar)</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6b2dc02f-f5e9-49b6-aecc-f6a27633064b">08 Mar recording</a>; <a href="blackboard/bb_08mar.pdf">08 Mar blackboard</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
