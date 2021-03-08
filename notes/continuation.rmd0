@@ -1,0 +1,100 @@
+---
+title: "Continuation methods"
+author: "Ben Bolker"
+date: '`r strsplit(as.character(Sys.time())," ")[[1]][1]` <#copyright> BMB  (except textbook material/other images)'
+urlcolor: blue
+bibliography: math4mb.bib
+output: tufte_handout
+header-includes:
+  - \hypersetup{colorlinks=true}
+---
+
+```{r setup,include=FALSE}
+library(ggplot2); theme_set(theme_bw())
+library(tidyverse)
+```
+
+```{r opts,include=FALSE}
+library("knitr")
+knitr::opts_chunk$set(eval=TRUE)
+library("reticulate")
+## scikit-learn? py_install("scikit-learn") works but py_module_available("scikit-learn") doesn't ...
+modules <- c("pandas","numpy","sympy","gillespy2")
+for (m in modules) {
+    while (!py_module_available(m)) {
+        cat("installing",m,"\n")
+        py_install(m)
+    }
+}
+use_python("/usr/bin/python3")
+matplotlib <- import("matplotlib")
+matplotlib$use("Agg", force = TRUE)
+```
+
+\newcommand{\rzero}{\mathcal{R}_0}
+
+## Numerical bifurcation analysis
+
+- brute-force
+- run model over a (1D or 2D?) grid of values
+   - discard transient
+   - figure out periodicity (Poincaré map/stroboscopic map)
+   - figure out Lyapunov exponents?
+
+@bolker_chaos_1993
+
+![](pix/bolker_grenfell.png)
+
+@earn_simple_2000
+
+![](pix/earn+.png)
+
+## Continuation methods
+
+- @blyth_tutorial_2020
+- Starting from a known attractor/equilibrium point of a system, move in parameter space (typically 1D) to detect *nearby* points/cycles.
+- Tricks: *backward-time* solution may find unstable points/orbits
+
+## grind
+
+- [tutorial](http://tbb.bio.uu.nl/rdb/grindR/tutorial.pdf)
+- [code](http://tbb.bio.uu.nl/rdb/grindR/grind.R)
+- [MATLAB version](https://github.com/mickelsp/jessen-group/tree/master/Matlab%20Files/grind)
+
+- Uses Newton-Raphson to find steady-state solutions (not necessarily stable)
+- evaluate Jacobian numerically
+
+```{r eval=FALSE}
+remotes::install_github("hansschepers/grindr")
+library(Grind)
+```
+
+- **disadvantages**: not very powerful
+- **advantages**: pretty basic, can see what it's doing
+
+## XPPAUT
+
+- Old-school
+- Handy for graphical exploration of 2D systems
+- interface to AUTO [@doedel_auto-07p_2007]
+- Used by @krylova_effects_2013
+     - [supplementary material from Krylova et al.](https://royalsocietypublishing.org/action/downloadSupplement?doi=10.1098%2Frsif.2013.0098&file=rsif20130098supp2.pdf)
+
+![](pix/krylova.png)
+
+- **disadvantages**: old-school, need to integrate with Python/R for nice plots
+- **advantages**: fast, easy to use, graphical, powerful
+
+## PyDSTool/PyCont
+
+Python based, interface to AUTO [@clewley_pydstool_2007]
+
+
+- [PyDSTool documentation](https://pydstool.github.io/PyDSTool/FrontPage.html)
+- [PyCont documentation](https://pydstool.github.io/PyDSTool/PyCont.html)
+- [Hindmarsh-Rose example on GitHub](https://github.com/robclewley/pydstool/blob/master/examples/PyCont_HindmarshRose.py)
+
+- **disadvantages**: inscrutable Python objects
+- **advantages**: fast, powerful
+
+## References

@@ -35,41 +35,42 @@ matplotlib$use("Agg", force = TRUE)
 
 ## Chaos
 
-* sensitive dependence on initial conditions
+* sensitive dependence on initial conditions (sdic); nearby trajectories diverge (exponentially)
 * bounded
+
+(exponential growth is an example of **unbounded** sdic)
 
 ## Lyapunov exponent/spectrum
 
 * Long-term average dynamics
 * Expansion/contraction of phase space
-*
+
+```{r eqplot, message=FALSE}
+par(las=1,bty="l")
+library(ellipse)
+ee <- ellipse(x=0,t=1)
+M <- matrix(c(1.2,0.5,0.5,1),nrow=2)
+MASS::eqscplot(ee,type="l",xlim=c(-5,5))
+for (i in 2:5) {
+    ee <- t(M %*% t(ee))
+    lines(ee[,1],ee[,2],col=i)
+}
+```
 
 ## Fractal dimension
 
-* box-counting
-* Kaplan-Yorke
+* Kaplan-Yorke:
 * Correlation dimension (Grassberger-Procaccia)
     * $C(\epsilon) = \lim_{N \to \infty} g/N^2$
 	* $C(\epsilon) \propto \epsilon^\nu$
 	* log-log graph
+* box-counting
 
 ## Embedding
 
 * Takens theorem
 
 ## Poincaré map
-
-## continuation methods
-
-- @blyth_tutorial_2020; [PyDSTool](https://pydstool.github.io/PyDSTool/FrontPage.html); XPPAUT
-
-@krylova_effects_2013
-
-![](pix/krylova.png)
-
-@bolker_chaos_1993
-
-![](pix/bolker_grenfell.png)
 
 
 ## References

@@ -129,14 +129,14 @@ schedule
 <td style="text-align: left;"><a href="notes/chaos.pdf">chaos notes</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="citation" data-cites="innocenti_dynamical_2007">Innocenti et al. (2007)</span></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6bf91c4a-446f-409a-bea9-790b70ebb8e4">01 Mar recording</a>, <a href="blackboard/bb_01mar.pdf">01 Mar blackboard</a> , <a href="blackboard/bb_05mar.pdf">05 Mar blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">09</td>
 <td style="text-align: left;">08-12 Mar</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="notes/continuation.pdf">continuation notes</a></td>
 <td style="text-align: left;">midterm test (take-home)</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
