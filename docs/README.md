@@ -137,7 +137,7 @@ schedule
 <td style="text-align: left;">08-12 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="notes/continuation.pdf">continuation notes</a></td>
-<td style="text-align: left;">midterm test (take-home)</td>
+<td style="text-align: left;"><a href="assignments/midterm.pdf">midterm test</a> (take-home, due Mon 15 Mar)</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
