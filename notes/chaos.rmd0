@@ -45,12 +45,13 @@ matplotlib$use("Agg", force = TRUE)
 * Long-term average dynamics
 * Expansion/contraction of phase space
 
-```{r eqplot, message=FALSE}
+```{r eqplot, message=FALSE, fig.width=4,fig.height=4, fig.cap="scaling by repeated transformation"}
 par(las=1,bty="l")
 library(ellipse)
 ee <- ellipse(x=0,t=1)
 M <- matrix(c(1.2,0.5,0.5,1),nrow=2)
-MASS::eqscplot(ee,type="l",xlim=c(-5,5))
+MASS::eqscplot(ee,type="l",xlim=c(-5,5),axes=FALSE)
+box()
 for (i in 2:5) {
     ee <- t(M %*% t(ee))
     lines(ee[,1],ee[,2],col=i)
