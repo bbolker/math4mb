@@ -28,15 +28,15 @@ admin
 schedule
 --------
 
-<table>
+<table style="width:100%;">
 <colgroup>
 <col style="width: 0%" />
 <col style="width: 1%" />
 <col style="width: 2%" />
+<col style="width: 9%" />
+<col style="width: 20%" />
 <col style="width: 8%" />
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 52%" />
+<col style="width: 54%" />
 <col style="width: 1%" />
 </colgroup>
 <thead>
@@ -119,7 +119,7 @@ schedule
 <td style="text-align: left;"><a href="notes/neuro.pdf">neuro notes</a></td>
 <td style="text-align: left;"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HcnItkWVZh0NIs3WqSgnk1GFUQ1k0QzFDM0ZNTTNIWU1RMUUyU1BQNjBIWS4u">feedback poll</a>, <a href="assignments/project_draft.html">project draft</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/241c21c7-e351-479d-902b-7b87c0374af2">22 Feb recording</a> , <a href="blackboard/bb_22feb.pdf">22 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/3ad92b72-d830-4fbb-8477-1a6c0f216c4a">24 Feb recording</a>, <a href="blackboard/bb_24feb.pdf">24 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/c785bcb3-1ce3-4a0b-a0b8-caafa83519e1">26 Feb recording</a>, <a href="blackboard/bb_26feb.pdf">26 Feb blackboard</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/241c21c7-e351-479d-902b-7b87c0374af2">22 Feb recording</a> , <a href="blackboard/bb_22feb.pdf">22 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/3ad92b72-d830-4fbb-8477-1a6c0f216c4a">24 Feb recording</a>, <a href="blackboard/bb_24feb.pdf">24 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/c785bcb3-1ce3-4a0b-a0b8-caafa83519e1">25 Feb recording</a>, <a href="blackboard/bb_26feb.pdf">25 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
@@ -129,7 +129,7 @@ schedule
 <td style="text-align: left;"><a href="notes/chaos.pdf">chaos notes</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><span class="citation" data-cites="innocenti_dynamical_2007">Innocenti et al. (2007)</span></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6bf91c4a-446f-409a-bea9-790b70ebb8e4">01 Mar recording</a>, <a href="blackboard/bb_01mar.pdf">01 Mar blackboard</a> , <a href="blackboard/bb_05mar.pdf">05 Mar blackboard</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6bf91c4a-446f-409a-bea9-790b70ebb8e4">01 Mar recording</a>, <a href="blackboard/bb_01mar.pdf">01 Mar blackboard</a> , <a href="blackboard/bb_04mar.pdf">04 Mar blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
@@ -138,8 +138,8 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="notes/continuation.pdf">continuation notes</a></td>
 <td style="text-align: left;"><a href="assignments/midterm.pdf">midterm test</a> (take-home, due Mon 15 Mar)</td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6b2dc02f-f5e9-49b6-aecc-f6a27633064b">08 Mar recording</a>; <a href="blackboard/bb_08mar.pdf">08 Mar blackboard</a></td>
 <td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6b2dc02f-f5e9-49b6-aecc-f6a27633064b">08 Mar recording</a> , <a href="blackboard/bb_08mar.pdf">08 Mar blackboard</a> , <a href="https://web.microsoftstream.com/video/8e91dd16-ae58-4b75-b7fd-7722db24e813">10 Mar recording</a>, <a href="blackboard/bb_10mar.pdf">10 Mar blackboard</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
