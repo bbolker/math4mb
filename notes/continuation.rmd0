@@ -51,6 +51,7 @@ matplotlib$use("Agg", force = TRUE)
 
 ## Continuation methods
 
+- @doedel_numerical_1991
 - @blyth_tutorial_2020
 - Starting from a known attractor/equilibrium point of a system, move in parameter space (typically 1D) to detect *nearby* points/cycles.
 - Tricks: *backward-time* solution may find unstable points/orbits
