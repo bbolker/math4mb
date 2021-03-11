@@ -33,9 +33,9 @@ schedule
 <col style="width: 0%" />
 <col style="width: 1%" />
 <col style="width: 2%" />
-<col style="width: 9%" />
-<col style="width: 20%" />
-<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 18%" />
+<col style="width: 7%" />
 <col style="width: 54%" />
 <col style="width: 1%" />
 </colgroup>
@@ -136,10 +136,10 @@ schedule
 <td style="text-align: left;">09</td>
 <td style="text-align: left;">08-12 Mar</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="notes/continuation.pdf">continuation notes</a></td>
+<td style="text-align: left;"><a href="notes/continuation.pdf">continuation notes</a> , <a href="code/grind.R">grind code</a> , <a href="code/PyCont_HindmarshRose.py">PyDSTool HR code</a></td>
 <td style="text-align: left;"><a href="assignments/midterm.pdf">midterm test</a> (take-home, due Mon 15 Mar)</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6b2dc02f-f5e9-49b6-aecc-f6a27633064b">08 Mar recording</a> , <a href="blackboard/bb_08mar.pdf">08 Mar blackboard</a> , <a href="https://web.microsoftstream.com/video/8e91dd16-ae58-4b75-b7fd-7722db24e813">10 Mar recording</a>, <a href="blackboard/bb_10mar.pdf">10 Mar blackboard</a></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/6b2dc02f-f5e9-49b6-aecc-f6a27633064b">08 Mar recording</a> , <a href="blackboard/bb_08mar.pdf">08 Mar blackboard</a> , <a href="https://web.microsoftstream.com/video/8e91dd16-ae58-4b75-b7fd-7722db24e813">10 Mar recording</a> , <a href="blackboard/bb_10mar.pdf">10 Mar blackboard</a> , <a href="https://web.microsoftstream.com/video/83b26976-38fe-44dc-92a6-1877cdbce8f9">11 Mar recording</a> (no 11 Mar blackboard)</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
@@ -147,7 +147,7 @@ schedule
 <td style="text-align: left;">15-19 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">15 Mar: replication paper</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
