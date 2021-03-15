@@ -146,7 +146,7 @@ schedule
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">15-19 Mar</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="citation" data-cites="hopfield_neural_1982">Hopfield (1982)</span></td>
 <td style="text-align: left;">15 Mar: replication paper</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -197,6 +197,11 @@ schedule
 
 References
 ----------
+
+Hopfield, J. J. 1982. “Neural Networks and Physical Systems with
+Emergent Collective Computational Abilities.” *Proceedings of the
+National Academy of Sciences* 79 (8): 2554–8.
+<https://doi.org/10.1073/pnas.79.8.2554>.
 
 Innocenti, Giacomo, Alice Morelli, Roberto Genesio, and Alessandro
 Torcini. 2007. “Dynamical Phases of the Hindmarsh-Rose Neuronal Model:
