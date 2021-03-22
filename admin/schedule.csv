@@ -9,7 +9,7 @@ week,date,topics,handouts,assignments,readings,recordings,notes
 08,01-05 Mar,neuro 2, [chaos notes](notes/chaos.pdf),,@innocenti_dynamical_2007,[01 Mar recording](https://web.microsoftstream.com/video/6bf91c4a-446f-409a-bea9-790b70ebb8e4); [01 Mar blackboard](blackboard/bb_01mar.pdf); [04 Mar blackboard](blackboard/bb_04mar.pdf)
 09,08-12 Mar, ,[continuation notes](notes/continuation.pdf); [grind code](code/grind.R); [PyDSTool HR code](code/PyCont_HindmarshRose.py) ,[midterm test](assignments/midterm.pdf) (take-home; due Mon 15 Mar),,[08 Mar recording](https://web.microsoftstream.com/video/6b2dc02f-f5e9-49b6-aecc-f6a27633064b); [08 Mar blackboard](blackboard/bb_08mar.pdf); [10 Mar recording](https://web.microsoftstream.com/video/8e91dd16-ae58-4b75-b7fd-7722db24e813); [10 Mar blackboard](blackboard/bb_10mar.pdf); [11 Mar recording](https://web.microsoftstream.com/video/83b26976-38fe-44dc-92a6-1877cdbce8f9) (no 11 Mar blackboard)
 10,15-19 Mar, ,@hopfield_neural_1982,15 Mar: replication paper
-11,22-26 Mar, , ,4
+11,22-26 Mar, , ,[replication exercise](assignments/replication.html)
 12,29 Mar-2 Apr
 13,5-9 Apr
 14,12-14 Apr

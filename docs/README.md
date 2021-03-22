@@ -157,7 +157,7 @@ schedule
 <td style="text-align: left;">22-26 Mar</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;">4</td>
+<td style="text-align: left;"><a href="assignments/replication.html">replication exercise</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
