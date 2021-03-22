@@ -1,6 +1,14 @@
-## Replication exercise
+---
+title: "Replication exercise"
+---
 
 In this part of the project you will replicate, as completely as practical, a paper from the literature. The goal is to learn something about the nuts and bolts, and possibly to find steps that are left out.
+
+You are not necessarily required to replicate every single element of the paper. How far you get will depend on (1) how hard the replication is (e.g. whether it contains novel mathematical topics, or extensive simulation); (2) how interested you are in investing effort in the replication vs. extending the paper in different directions or trying something novel. Your complete final assignment must contain at least some component of replication and some of novel modeling, but the balance is up to you.
+
+## Milestones
+
+- Fri 26 March: progress report (source code, PDF, + individual contribution repots)
 
 ## Mathematical components
 
