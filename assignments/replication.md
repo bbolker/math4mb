@@ -6,9 +6,22 @@ In this part of the project you will replicate, as completely as practical, a pa
 
 You are not necessarily required to replicate every single element of the paper. How far you get will depend on (1) how hard the replication is (e.g. whether it contains novel mathematical topics, or extensive simulation); (2) how interested you are in investing effort in the replication vs. extending the paper in different directions or trying something novel. Your complete final assignment must contain at least some component of replication and some of novel modeling, but the balance is up to you.
 
+Division of labour is fine (of course, be clear about who did which parts); try to make sure that everyone in the group is at least familiar with all of the different components (take some time to explain the part you did to everyone else in your group).
+
 ## Milestones
 
 - Fri 26 March: progress report (source code, PDF, + individual contribution repots)
+
+## Collaboration tools
+
+You should give a little bit of thought to how you're going to share materials
+
+- you can e-mail everything back and forth (ugh)
+- you can share files on Teams, Zulip, OneDrive, etc
+- GitHub
+- [collaborative Jupyter notebooks](https://datascience.stackexchange.com/questions/63101/collaborating-on-jupyter-notebooks)
+- Google docs, OneNote
+- Overleaf (online collaborative LaTeX)
 
 ## Mathematical components
 
