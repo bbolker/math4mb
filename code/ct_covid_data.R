@@ -1,3 +1,5 @@
+## found data at https://data.ct.gov/Health-and-Human-Services/COVID-19-Tests-Cases-Hospitalizations-and-Deaths-S/rf3k-f8fg
+
 library(tidyverse)
 library(directlabels)
 theme_set(theme_bw())
