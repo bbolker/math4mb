@@ -156,7 +156,7 @@ schedule
 <td style="text-align: left;">11</td>
 <td style="text-align: left;">22-26 Mar</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="code/seas_force_SIR_bifurc.ipynb">SEIR bifurc code</a></td>
+<td style="text-align: left;"><a href="code/seas_forced_sir_bifurc.ipynb">SEIR bifurc code</a></td>
 <td style="text-align: left;"><a href="assignments/replication.html">replication exercise</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
