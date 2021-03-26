@@ -155,11 +155,11 @@ schedule
 <tr class="odd">
 <td style="text-align: left;">11</td>
 <td style="text-align: left;">22-26 Mar</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">projects + disease evol</td>
 <td style="text-align: left;"><a href="notes/disease_evol.pdf">disease evol notes</a> , <a href="code/seas_forced_sir_bifurc.ipynb">SEIR bifurc code</a></td>
 <td style="text-align: left;"><a href="assignments/replication.html">replication exercise</a></td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://web.microsoftstream.com/video/53dc8741-844c-4960-ab37-f9decc713b48">25 Mar recording</a></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
