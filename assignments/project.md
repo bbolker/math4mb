@@ -1,6 +1,50 @@
 ---
-title: "final project draft 0"
+title: "final project info"
 ---
+
+### Table of contents
+
+* [final document](#final)
+* [presentation](#presentation)
+* [milestone 2](#milestone2)
+* [milestone 1](#milestone1)
+* [initial draft](#draft0)
+* [rubric](#rubric)
+
+
+<a name="final/">
+## Final submission
+
+**Please ask for clarification of any points below that are unclear or incomplete.**
+
+- **Due date**: Weds April 28
+- Your complete final assignment must contain at least some component of replication and some of novel modeling, but the balance is up to you. 
+- See the [rubric](#rubric) below: in particular,
+   - your project should include some component of replication and some of extension/novel modeling; the precise balance is up to you.
+   - your project should definitely include some analytical component and some computational component (and possibly a data-analysis/parameter-estimation component); the balance is up to you.
+- Submit a *single* PDF document of somewhere around 5-15 pages, inclusive of figures and references; content is more important than length, please don't try to pad your document. Please cite all sources that you used; online sources can be cited as URLs, while peer-reviewed material should be completely/fully cited in any reference style you prefer. 
+- In addition, submit complete code in one or more files that would allow complete replication of your results (data files, code, etc.). These can be in any reasonable format (e.g. {`.ipynb`, `.py`, `.R`, `.Rmd`} for code; {`.csv`, `.pkl`, `.RData`, `.rds`} for data).
+
+<a name="presentation/">
+## Presentation
+
+- Your group will give a presentation in class on either **Monday April 12** or **Wednesday April 14** (if you have a preference, please ask me: first come first serve!)
+- Aim for a presentation of about 20 minutes.
+- The target audience for your presentation is your classmates; please assume that everyone knows the material taught in this course and in MATH 3F03 and don't re-cover it, except in passing. Please **do** explain anything that your group learned in the course of doing the project that you didn't already know (even where this conflicts with the previous criterion). Aim to cover the biological context/inspiration for the model(s) you're presenting and the main mathematical or computational points covered in the project. What challenges did you overcome, what did you learn, what did you find most interesting about the project? What were the conclusions of the paper you replicated, and of your extensions to it?
+- Beamer or similar computationally driven formats are strongly preferred (e.g. see [here](https://opensource.com/article/20/9/presentation-jupyter-notebooks) or [here](https://opensource.com/article/20/9/presentation-jupyter-notebooks) for creating presentations from Jupyter notebooks, [here](https://rmarkdown.rstudio.com/lesson-11.html) for presentations from Rmarkdown, or [here](https://www.overleaf.com/learn/latex/Beamer_Presentations:_A_Tutorial_for_Beginners_(Part_1)%E2%80%94Getting_Started) for basic Beamer presentations. Powerpoint will be tolerated.
+
+<a name="milestone2/">
+## Milestone 2
+
+You should demonstrate continued progress with your replication attempt, and/or progress on your novel component.
+
+<a name="milestone1/">
+## Milestone 1
+
+See [replication exercise](./replication.md)
+
+<a name="draft0/">
+## Draft
 
 **Due**: 24 Feb, midnight, on Dropbox or by e-mail.  (If you have already submitted your project proosal, you can re-submit it if you like but are not required to.)
 
@@ -21,7 +65,7 @@ Tell me what area of math biology you want to tackle for your project. Let me kn
    * estimate the parameters (roughly/by eye or using some kind of optimization) from some data set
 * list one or two related references. Ideally, this would include a published paper whose results you can replicate as the first step of your project.
 
-
+<a name="rubric/">
 ## Final project marking rubric
 
 * **A**: Either a thorough analysis/exploration of a moderately complex/sophisticated model, or analyses of several related, simpler models that give different perspectives on the problem. Presents at least some analytical results, possibly for a simplified version of the model, and at least some computational results, possibly for a more complex version of the model. The problem and the model are clearly described. The results are illustrated with sensible plots. If the model used is reconstructed from a paper, then some sensible/interesting extension of the original model is included.  Model parameters are clearly described and sensibly handled (whether qualitative or quantitative). The report is clearly and succinctly written, with a connection back from the mathematical (etc.) results to their biological meaning.
