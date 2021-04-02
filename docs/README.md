@@ -36,7 +36,7 @@ schedule
 <col style="width: 13%" />
 <col style="width: 17%" />
 <col style="width: 7%" />
-<col style="width: 55%" />
+<col style="width: 54%" />
 <col style="width: 1%" />
 </colgroup>
 <thead>
@@ -117,7 +117,7 @@ schedule
 <td style="text-align: left;">22-26 Feb</td>
 <td style="text-align: left;">epidemics + neurons</td>
 <td style="text-align: left;"><a href="notes/neuro.pdf">neuro notes</a></td>
-<td style="text-align: left;"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HcnItkWVZh0NIs3WqSgnk1GFUQ1k0QzFDM0ZNTTNIWU1RMUUyU1BQNjBIWS4u">feedback poll</a>, <a href="assignments/project.md">project draft</a></td>
+<td style="text-align: left;"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=B2M3RCm0rUKMJSjNSW9HcnItkWVZh0NIs3WqSgnk1GFUQ1k0QzFDM0ZNTTNIWU1RMUUyU1BQNjBIWS4u">feedback poll</a>, <a href="assignments/project.html">project draft</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"><a href="https://web.microsoftstream.com/video/241c21c7-e351-479d-902b-7b87c0374af2">22 Feb recording</a> , <a href="blackboard/bb_22feb.pdf">22 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/3ad92b72-d830-4fbb-8477-1a6c0f216c4a">24 Feb recording</a>, <a href="blackboard/bb_24feb.pdf">24 Feb blackboard</a> , <a href="https://web.microsoftstream.com/video/c785bcb3-1ce3-4a0b-a0b8-caafa83519e1">25 Feb recording</a>, <a href="blackboard/bb_25feb.pdf">25 Feb blackboard</a></td>
 <td style="text-align: left;"></td>
@@ -186,7 +186,7 @@ schedule
 <td style="text-align: left;">14</td>
 <td style="text-align: left;">12-14 Apr</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/project.md">presentations</a></td>
+<td style="text-align: left;"><a href="assignments/project.html">presentations</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -196,7 +196,7 @@ schedule
 <td style="text-align: left;"></td>
 <td style="text-align: left;">28 Apr</td>
 <td style="text-align: left;"></td>
-<td style="text-align: left;"><a href="assignments/project.md">projects due</a></td>
+<td style="text-align: left;"><a href="assignments/project.html">projects due</a></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
