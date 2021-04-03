@@ -4,11 +4,11 @@ title: "final project info"
 
 ### Table of contents
 
-* [final document](#final)
-* [presentation](#presentation)
-* [milestone 2](#milestone2)
-* [milestone 1](#milestone1)
-* [initial draft](#draft0)
+* [final document](#final/)
+* [presentation](#presentation/)
+* [milestone 2](#milestone2/)
+* [milestone 1](#milestone1/)
+* [initial draft](#draft0/)
 * [rubric](#rubric/)
 
 ## Final submission
