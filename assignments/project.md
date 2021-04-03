@@ -13,7 +13,7 @@ title: "final project info"
 
 ## Final submission
 
-<a name="final/">
+<a name="final/"></a>
 
 **Please ask for clarification of any points below that are unclear or incomplete.**
 
@@ -27,7 +27,7 @@ title: "final project info"
 
 ## Presentation
 
-<a name="presentation/">
+<a name="presentation/"></a>
 
 - Your group will give a presentation in class on either **Monday April 12** or **Wednesday April 14** (if you have a preference, please ask me: first come first serve!)
 - Aim for a presentation of about 20 minutes.
@@ -36,19 +36,19 @@ title: "final project info"
 
 ## Milestone 2
 
-<a name="milestone2/">
+<a name="milestone2/"></a>
 
 You should demonstrate continued progress with your replication attempt, and/or progress on your novel component.
 
 ## Milestone 1
 
-<a name="milestone1/">
+<a name="milestone1/"></a>
 
 See [replication exercise](./replication.md)
 
 ## Draft
 
-<a name="draft0/">
+<a name="draft0/"></a>
 
 **Due**: 24 Feb, midnight, on Dropbox or by e-mail.  (If you have already submitted your project proosal, you can re-submit it if you like but are not required to.)
 
@@ -71,7 +71,7 @@ Tell me what area of math biology you want to tackle for your project. Let me kn
 
 ## Final project marking rubric
 
-<a name="rubric/">
+<a name="rubric/"></a>
 
 * **A**: Either a thorough analysis/exploration of a moderately complex/sophisticated model, or analyses of several related, simpler models that give different perspectives on the problem. Presents at least some analytical results, possibly for a simplified version of the model, and at least some computational results, possibly for a more complex version of the model. The problem and the model are clearly described. The results are illustrated with sensible plots. If the model used is reconstructed from a paper, then some sensible/interesting extension of the original model is included.  Model parameters are clearly described and sensibly handled (whether qualitative or quantitative). The report is clearly and succinctly written, with a connection back from the mathematical (etc.) results to their biological meaning.
 * **B**: A thorough analysis of a simple model.  May include only analytical or only computational results, but these results must be solid. The problem and the analysis are still clearly described. A reconstruction of a complex or several-part model from the literature without any extensions or new material would fall in this category. Approach to choosing parameter values is clearly identified, but not very deep or thorough (e.g. "we took the parameters from reference 5").  Biological conclusions are included, but are perfunctory.
