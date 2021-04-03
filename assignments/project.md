@@ -38,6 +38,8 @@ title: "final project info"
 
 <a name="milestone2/"></a>
 
+**Due date**: Friday April 9
+
 You should demonstrate continued progress with your replication attempt, and/or progress on your novel component.
 
 ## Milestone 1
