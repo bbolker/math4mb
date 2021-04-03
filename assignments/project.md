@@ -9,7 +9,7 @@ title: "final project info"
 * [milestone 2](#milestone2)
 * [milestone 1](#milestone1)
 * [initial draft](#draft0)
-* [rubric](#rubric)
+* [rubric](#rubric/)
 
 ## Final submission
 
