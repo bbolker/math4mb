@@ -39,4 +39,5 @@ def plot_fun(param,fn,ylims=None, plot_sub=True, ext=".pdf"):
     fig.savefig(fn+"_sub"+ext,dpi=200)
 
 
-plot_fun(0,"bifplot",ylims=[1.43,1.51], plot_sub=False)
+if __name__=="__main__":
+    plot_fun(0,"bifplot",ylims=[1.43,1.51], plot_sub=False)
