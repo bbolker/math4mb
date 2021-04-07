@@ -30,6 +30,8 @@ title: "final project info"
 <a name="presentation/"></a>
 
 - Your group will give a presentation in class on either **Monday April 12** or **Wednesday April 14** (if you have a preference, please ask me: first come first serve!)
+    - **Monday**: COVID dynamics, predator-prey
+	- **Wednesday**: Moran, coupled neurons
 - You should have enough done to say something interesting, but you're not expected to present a completed project; think of this as a progress/preliminary report. I will provide feedback on the presentation; you should plan to incorporate that feedback into your final project writeup.
 - Aim for a presentation of about 20 minutes.
 - The target audience for your presentation is your classmates; please assume that everyone knows the material taught in this course and in MATH 3F03 and don't re-cover it, except in passing. Please **do** explain anything that your group learned in the course of doing the project that you didn't already know (even where this conflicts with the previous criterion). Aim to cover the biological context/inspiration for the model(s) you're presenting and the main mathematical or computational points covered in the project. What challenges did you overcome, what did you learn, what did you find most interesting about the project? What were the conclusions of the paper you replicated, and of your extensions to it?
