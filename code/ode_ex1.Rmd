@@ -52,7 +52,7 @@ def SIR_grad(y, t, params):
 
 y0 = (0.99, 0.01, 0)
 params = (4,1)
-grad(0, y0, params) ## check
+SIR_grad(y0, 0, params) ## check
 t_vec = np.linspace(0,8,101)
 SIR_sol1 = odeint(SIR_grad,
                   y0=y0,
